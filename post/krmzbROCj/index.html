@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://rockythink.github.io//favicon.ico?v=1562920625217">
+<link rel="shortcut icon" href="https://rockythink.github.io//favicon.ico?v=1562922037281">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://rockythink.github.io//styles/main.css">
 
@@ -45,7 +45,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://rockythink.github.io/">
-        <img src="https://rockythink.github.io//images/avatar.png?v=1562920625217" class="site-logo">
+        <img src="https://rockythink.github.io//images/avatar.png?v=1562922037281" class="site-logo">
         <h1 class="site-title">Rocky|Think</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -126,11 +126,19 @@ Mac版本和Windows版本已经集成了docker-compose，linux好像没有；</p
 <p>我用的阿里云的代理，速度杠杠的</p>
 <p>这是地址<a href="https://cr.console.aliyun.com/#/accelerator">阿里云容器镜像服务</a>，打开登录后,左下角有个镜</p>
 <p>像加速器，就能看到自己的加速链接了，一人一码，不要钱</p>
-<p>不仅如此，页面中把加速器的配置方法都写上了，我在这里就不阐述了</p>
+<p>不仅如此，页面中把加速器的配置方法都写上了，我在这里就不阐述了
+<img src="https://rockythink.github.io//post-images/1562921491978.png" alt=""></p>
 <p>步骤二：
-这里很关键！！
-docker安装主要用的是docker-compose.yml文件来做启动的，这个文件非常重要，他设置了所需要的启动的所有容器和基本配置
-但是之前的</p>
+这里很关键！！<br>
+docker安装主要用的是docker-compose.yml文件来做启动的，这个文件非常重要，他设置了所需要的启动的所有容器和基本配置<br>
+这里我做了些修改：<br>
+修改内容：<br>
+1、指定了redash版本<br>
+2、增加了redis和postgres的db文件与宿主机的映射，不让docker容器停止后数据丢失<br>
+3、增加了redis和postgres的端口映射，方便调试，线上环境也可以关掉<br>
+4、修改REDASH_COOKIE_SECRET<br>
+5、增加了邮箱设置<br>
+6、增加了对python Query 的支持</p>
 
             </div>
             
