@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rockythink.github.io/</id>
     <title>Rocky|Think</title>
-    <updated>2019-07-12T07:28:00.918Z</updated>
+    <updated>2019-07-12T08:37:07.619Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rockythink.github.io/"/>
     <link rel="self" href="https://rockythink.github.io//atom.xml"/>
@@ -11,16 +11,17 @@
     <icon>https://rockythink.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, Rocky|Think</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（二）：安装部署]]></title>
+        <id>https://rockythink.github.io//post/krmzbROCj</id>
+        <link href="https://rockythink.github.io//post/krmzbROCj">
+        </link>
+        <updated>2019-07-12T07:57:43.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（一）：简单介绍]]></title>
         <id>https://rockythink.github.io//post/hello-gridea</id>
         <link href="https://rockythink.github.io//post/hello-gridea">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></content>
     </entry>
 </feed>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Rocky|Think</title>
+<title>【BI工具】Redash的部署和使用系列（二）：安装部署 | Rocky|Think</title>
 <meta name="description" content="一件小事">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://rockythink.github.io//styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -104,47 +110,50 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://rockythink.github.io//post/krmzbROCj">
-                  <h2 class="post-title">【BI工具】Redash的部署和使用系列（二）：安装部署</h2>
-                </a>
-                <div class="post-date">
-                  2019-07-12
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://rockythink.github.io//post/hello-gridea">
-                  <h2 class="post-title">【BI工具】Redash的部署和使用系列（一）：简单介绍</h2>
-                </a>
-                <div class="post-date">
-                  2018-12-12
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-                <a class="right" href="https://rockythink.github.io//post/hello-gridea">
-                  <div class="feature-container" style="background-image: url('https://rockythink.github.io//post-images/hello-gridea.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">【BI工具】Redash的部署和使用系列（二）：安装部署</h2>
+            <div class="post-date">2019-07-12</div>
+            
+            <div class="post-content">
+              <p>我这边是用官方提供的docker方式部署的，也有直接部署在系统环境中的，这里推荐一篇文章：<a href="http://guzhenping.com/2018/11/02/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0--Redash/">Redash开发指南</a>，他有个微信群，大家可以在文章里加下，如果有对二次开发有需求的同学；</p>
+<p>官方给了Ubuntu18.04的一键安装脚本：奈何国内网络环境的问题，基本上会很慢很慢很慢，所以为了方便，我读了shell文件后，决定自己安装，当然还是在docker中部署；</p>
+<p>（使用的Ubuntu，其他系统基本一致，大家主要看逻辑，如果遇到一些问题可以自己google，基本都不会是大问题，也可以加tg群：<a href="https://t.me/redash">点我加群</a>，我们一起研究解决）</p>
+<p>步骤一：</p>
+<p>安装docker和docker-compose，docker可以直接在官网下载安装，或者apt或者yum怎么方便怎么来
+Mac版本和Windows版本已经集成了docker-compose，linux好像没有；</p>
+<p><code>docker-compose</code>如果显示命令找不到，说明就没有，google下安装就好</p>
+<p>这里注意下，要设置下docker的加速代理，不然pull文件时会很慢；</p>
+<p>我用的阿里云的代理，速度杠杠的</p>
+<p>这是地址<a href="https://cr.console.aliyun.com/#/accelerator">阿里云容器镜像服务</a>，打开登录后,左下角有个镜</p>
+<p>像加速器，就能看到自己的加速链接了，一人一码，不要钱</p>
+<p>不仅如此，页面中把加速器的配置方法都写上了，我在这里就不阐述了</p>
+<p>步骤二：
+这里很关键！！
+docker安装主要用的是docker-compose.yml文件来做启动的，这个文件非常重要，他设置了所需要的启动的所有容器和基本配置
+但是之前的</p>
 
-          <div class="pagination-container">
-  
-  
-</div>
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://rockythink.github.io//post/hello-gridea">
+                  <h3 class="post-title">
+                    【BI工具】Redash的部署和使用系列（一）：简单介绍
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
 
         </div>
       </div>
@@ -166,6 +175,29 @@ var app = new Vue({
 })
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '91b939421807157f20f3',
+        clientSecret: 'c1050ef51bc8d5f4b7f42f809d5d9c5801bc7516',
+        repo: 'rockythink.github.io',
+        owner: 'rockythink',
+        admin: ['rockythink'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 

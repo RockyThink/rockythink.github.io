@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Hello Gridea | Rocky|Think</title>
+<title>【BI工具】Redash的部署和使用系列（一）：简单介绍 | Rocky|Think</title>
 <meta name="description" content="一件小事">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://rockythink.github.io//favicon.ico?v=1562916478335">
+<link rel="shortcut icon" href="https://rockythink.github.io//favicon.ico?v=1562920625217">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://rockythink.github.io//styles/main.css">
 
@@ -45,7 +45,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://rockythink.github.io/">
-        <img src="https://rockythink.github.io//images/avatar.png?v=1562916478335" class="site-logo">
+        <img src="https://rockythink.github.io//images/avatar.png?v=1562920625217" class="site-logo">
         <h1 class="site-title">Rocky|Think</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -111,34 +111,29 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Hello Gridea</h2>
+            <h2 class="post-title">【BI工具】Redash的部署和使用系列（一）：简单介绍</h2>
             <div class="post-date">2018-12-12</div>
             
               <div class="feature-container" style="background-image: url('https://rockythink.github.io//post-images/hello-gridea.png')">
               </div>
             
             <div class="post-content">
-              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="http://hvenotes.fehey.com/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>𝖶𝗂𝗇𝖽𝗈𝗐𝗌</strong> 或 <strong>𝖬𝖺𝖼𝖮𝖲</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+              <p>本系列文章参考了一些网上的文章和官方文档：
+<a href="https://medium.com/marsw-redash/bi%E5%B7%A5%E5%85%B7-%E4%BB%A5redash%E7%82%BA%E8%B3%87%E6%96%99%E8%A6%96%E8%A6%BA%E5%8C%96%E6%96%B9%E6%A1%88%E4%B9%8B%E9%81%B8%E6%93%87%E8%88%87%E5%AF%A6%E8%B8%90%E7%B3%BB%E5%88%97-affbf9cb45a6"> MarsW-Redash</a>
+<a href="https://redash.io/help/open-source/setup">Redash 官文</a></p>
+<p>由于喜欢折腾，也希望自己成长，所以喜欢搞一些开源的东西，并不喜欢使用其他收费的数据分析工具的方案，所以开源的三大数据分析平台都用过，包括Superset,Metabase,Redash等；各有千秋吧，本次主要是用redash的开源工具；至于为什么，网上的文章很多，我就不说了</p>
+<p><strong>我选择redash的主要原因</strong>：</p>
+<ul>
+<li>Python写的，而且代码逻辑清晰，未来有需要可以做二次开发</li>
+<li>支持几乎所有的数据库，比较方便</li>
+<li>之前superset用过，但是感觉不够简洁，尤其是在做权限管理的时候，虽然redash的权限管理简单粗暴，但是简单</li>
+<li>还有别的。。。。就不说了，大家可以自己做判断，毕竟每个人的需求不一样</li>
+</ul>
+<p>** 好了这可以说的一个目录吧，我将从安装、使用、维护等三个方面做此系列：**</p>
+<ul>
+<li><a href="">部署</a></li>
+<li><a href="">redash的基本逻辑</a></li>
+</ul>
 
             </div>
             
