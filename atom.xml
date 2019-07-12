@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rockythink.github.io/</id>
-    <title>RockyThink</title>
-    <updated>2019-07-12T07:23:41.221Z</updated>
+    <title>Rocky|Think</title>
+    <updated>2019-07-12T07:27:12.681Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rockythink.github.io/"/>
     <link rel="self" href="https://rockythink.github.io//atom.xml"/>
     <subtitle>一件小事</subtitle>
     <logo>https://rockythink.github.io//images/avatar.png</logo>
     <icon>https://rockythink.github.io//favicon.ico</icon>
-    <rights>All rights reserved 2019, RockyThink</rights>
+    <rights>All rights reserved 2019, Rocky|Think</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://rockythink.github.io//post/hello-gridea</id>
