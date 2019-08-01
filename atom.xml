@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://rockythink.github.io/</id>
+    <id>https://www.elazer.tk</id>
     <title>Rocky|Think</title>
-    <updated>2019-08-01T13:27:44.347Z</updated>
+    <updated>2019-08-01T14:29:44.671Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://rockythink.github.io/"/>
-    <link rel="self" href="https://rockythink.github.io//atom.xml"/>
+    <link rel="alternate" href="https://www.elazer.tk"/>
+    <link rel="self" href="https://www.elazer.tk/atom.xml"/>
     <subtitle>一件小事</subtitle>
-    <logo>https://rockythink.github.io//images/avatar.png</logo>
-    <icon>https://rockythink.github.io//favicon.ico</icon>
+    <logo>https://www.elazer.tk/images/avatar.png</logo>
+    <icon>https://www.elazer.tk/favicon.ico</icon>
     <rights>All rights reserved 2019, Rocky|Think</rights>
     <entry>
         <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（二）：安装部署]]></title>
-        <id>https://rockythink.github.io//post/krmzbROCj</id>
-        <link href="https://rockythink.github.io//post/krmzbROCj">
+        <id>https://www.elazer.tk/post/krmzbROCj</id>
+        <link href="https://www.elazer.tk/post/krmzbROCj">
         </link>
         <updated>2019-07-12T07:57:43.000Z</updated>
         <content type="html"><![CDATA[<p>我这边是用官方提供的docker方式部署的，也有直接部署在系统环境中的，这里推荐一篇文章：<a href="http://guzhenping.com/2018/11/02/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0--Redash/">Redash开发指南</a>，他有个微信群，大家可以在文章里加下，如果有对二次开发有需求的同学；</p>
@@ -28,7 +28,7 @@ Mac版本和Windows版本已经集成了docker-compose，linux好像没有；</p
 <p>这是地址<a href="https://cr.console.aliyun.com/#/accelerator">阿里云容器镜像服务</a>，打开登录后,左下角有个镜</p>
 <p>像加速器，就能看到自己的加速链接了，一人一码，不要钱</p>
 <p>不仅如此，页面中把加速器的配置方法都写上了，我在这里就不阐述了
-<img src="https://rockythink.github.io//post-images/1562921491978.png" alt=""></p>
+<img src="https://www.elazer.tk/post-images/1562921491978.png" alt=""></p>
 <p>步骤二：
 1、建立好配置文件夹：</p>
 <pre><code>sudo mkdir /opt/redash
@@ -193,8 +193,8 @@ sudo docker-compose up -d
     </entry>
     <entry>
         <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（一）：简单介绍]]></title>
-        <id>https://rockythink.github.io//post/hello-gridea</id>
-        <link href="https://rockythink.github.io//post/hello-gridea">
+        <id>https://www.elazer.tk/post/hello-gridea</id>
+        <link href="https://www.elazer.tk/post/hello-gridea">
         </link>
         <updated>2019-07-11T16:00:00.000Z</updated>
         <content type="html"><![CDATA[<p>本系列文章参考了一些网上的文章和官方文档：
