@@ -1,428 +1,179 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" >
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    Rocky|Think
-</title>
-<link rel="shortcut icon" href="https://www.elazer.tk/favicon.ico?v=1564717899774">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<title>Rocky|Think</title>
+<meta name="description" content="一件小事">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://www.elazer.tk/favicon.ico?v=1564718127607">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://www.elazer.tk/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://www.elazer.tk/media/js/jquery.sticky-sidebar.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
-</head>
-
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://www.elazer.tk">
-                <img class="avatar" src="https://www.elazer.tk/images/avatar.png?v=1564717899774" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    Rocky|Think
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    归档
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    标签
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
-    </div>
-</div>
-
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143767475-1"></script>
 <script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
+  gtag('config', 'UA-143767475-1');
 </script>
 
-            <div id="main-content" class="post-container main-container">
-                <div id="content" class="main-container-left">
-                    
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://www.elazer.tk">
+        <img src="https://www.elazer.tk/images/avatar.png?v=1564718127607" class="site-logo">
+        <h1 class="site-title">Rocky|Think</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
         
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://www.elazer.tk/post/krmzbROCj">
-                        【BI工具】Redash的部署和使用系列（二）：安装部署
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-12</time>
-                    
-                        <a href="https://www.elazer.tk/tag/redash" class="post-tag i-tag
-                            i-tag-other_3">
-            #redash
-        </a>
-                        
-                        <a href="https://www.elazer.tk/tag/sxhfMaTFf" class="post-tag i-tag
-                            i-tag-">
-            #Python
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                        <a href="https://www.elazer.tk/post/krmzbROCj" class="post-feature-image" style="background-image:url(https://www.elazer.tk/post-images/krmzbROCj.png) ">
-                        </a>
-                        
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            我这边是用官方提供的docker方式部署的，也有直接部署在系统环境中的，这里推荐一篇文章：Redash开发指南，他有个微信群，大家可以在文章里加下，如果有对二次开发有需求的同学；
-官方给了Ubuntu18.04的一键安装脚本：奈何国内网络环境的问题，基本上会很慢很慢很慢，所以为了方便，我读了shell文件后，决定自己安装，当然还是在docker中部署；
-（使用的Ubuntu，其他系统基本一致，大家主要看逻辑，如果遇到一些问题可以自己google，基本都不会是大问题，也可以加tg群：点我加群，我们一起研究解决）
-步骤一：
-安装docker和docker-compose，docker可以直接在官网下载安装，或者apt或者yum怎么方便怎么来
-Mac版本和Windows版本已经集成了docker-compose，linux好像没有；
-docker-compose如果显示命令找不到，说明就没有，google下安装就好
-这里注意下，要设置下docker的加速代理，不然pull文件时会很慢；
-我用的阿里云的代理，速度杠杠的
-这是地址阿里云容器镜像服务，打开登录后,左下角有个镜
-像加速器，就能看到自己的加速链接了，一人一码，不要钱
-不仅如此，页面中把加速器的配置方法都写上了，我在这里就不阐述了
-
-步骤二：
-1、建立好配置文件夹：
-sudo mkdir /opt/redash
-
-2、这里很关键！！
-先建立一个env 文件：
-sudo vim /opt/redash/env
-
-这里记录的是一些数据库连接url和密码之内的信息，很好理解：
-PYTHONUNBUFFERED=0
-REDASH_LOG_LEVEL=INFO
-REDASH_REDIS_URL=redis://redis:6379/0
-POSTGRES_PASSWORD=数据库密码（redash自己的数据库哦)
-REDASH_COOKIE_SECRET=[REDASH_COOKIE_SECRET](自己写)
-REDASH_SECRET_KEY=[_SECRET_key]
-REDASH_DATABASE_URL=postgresql://postgres:[数据库密码]@postgres/postgres
-
-
-其实上面的信息并不是很重要，可以用脚本生成随机的参数
-REDASH_BASE_PATH=/opt/redash
-COOKIE_SECRET=$(pwgen -1s 32)
-SECRET_KEY=$(pwgen -1s 32)
-POSTGRES_PASSWORD=$(pwgen -1s 32)
-REDASH_DATABASE_URL=&amp;quot;postgresql://postgres:${POSTGRES_PASSWORD}@postgres/postgres&amp;quot;
-echo &amp;quot;PYTHONUNBUFFERED=0&amp;quot; &amp;gt;&amp;gt; $REDASH_BASE_PATH/env
-echo &amp;quot;REDASH_LOG_LEVEL=INFO&amp;quot; &amp;gt;&amp;gt; $REDASH_BASE_PATH/env
-echo &amp;quot;REDASH_REDIS_URL=redis://redis:6379/0&amp;quot; &amp;gt;&amp;gt; $REDASH_BASE_PATH/env
-echo &amp;quot;POSTGRES_PASSWORD=$POSTGRES_PASSWORD&amp;quot; &amp;gt;&amp;gt; $REDASH_BASE_PATH/env
-echo &amp;quot;REDASH_COOKIE_SECRET=$COOKIE_SECRET&amp;quot; &amp;gt;&amp;gt; $REDASH_BASE_PATH/env
-echo &amp;quot;REDASH_SECRET_KEY=$SECRET_KEY&amp;quot; &amp;gt;&amp;gt; $REDASH_BASE_PATH/env
-echo &amp;quot;REDASH_DATABASE_URL=$REDASH_DATABASE_URL&amp;quot; &amp;gt;&amp;gt; $REDASH_BASE_PATH/env
-
-新建个sh 文件
-粘贴上面的代码运行就好了
-会生成一个env
-好了，到第三步：
-docker安装主要用的是docker-compose.yml文件来做启动的，这个文件非常重要，他设置了所需要的启动的所有容器和基本配置
-这里我做了些修改：
-修改内容：
-1、指定了redash版本
-2、增加了redis和postgres的db文件与宿主机的映射，不让docker容器停止后数据丢失
-3、增加了redis和postgres的端口映射，方便调试，线上环境也可以关掉
-4、修改REDASH_COOKIE_SECRET
-5、增加了邮箱设置
-6、增加了对python Query 的支持
-废话不多说：我直接贴docker-compose.yml上来
-version: &#39;2&#39;
-x-redash-service: &amp;amp;redash-service
-  image: redash/redash:7.0.0.b18042
-  depends_on:
-    - postgres
-    - redis
-  env_file: /opt/redash/env
-  restart: always
-services:
-  server:
-    &amp;lt;&amp;lt;: *redash-service
-    command: server
-    ports:
-      - &amp;quot;5000:5000&amp;quot;
-    environment:
-      PYTHONUNBUFFERED: 0
-      REDASH_LOG_LEVEL: &amp;quot;INFO&amp;quot;
-      REDASH_REDIS_URL: &amp;quot;redis://redis:6379/0&amp;quot;
-      REDASH_DATABASE_URL: &amp;quot;postgresql://postgres@postgres/postgres&amp;quot;
-			 #自己设置
-      REDASH_COOKIE_SECRET: &amp;quot;$%#ghudsa&amp;quot;   
-      REDASH_WEB_WORKERS: 4
-      # 邮箱
-      REDASH_MAIL_SERVER: &amp;quot;smtp服务器地址&amp;quot;
-      REDASH_MAIL_PORT: 80
-      REDASH_MAIL_USE_TLS: &amp;quot;false&amp;quot;
-      REDASH_MAIL_USERNAME: &amp;quot;邮箱&amp;quot;
-      REDASH_MAIL_PASSWORD: &amp;quot;邮箱密码&amp;quot;
-      REDASH_MAIL_DEFAULT_SENDER: &amp;quot;邮箱&amp;quot;
-      REDASH_HOST: &amp;quot;http://部署地址&amp;quot;
-
-      #python
-      REDASH_ADDITIONAL_QUERY_RUNNERS: &amp;quot;redash.query_runner.python&amp;quot;
-  scheduler:
-    &amp;lt;&amp;lt;: *redash-service
-    command: scheduler
-    environment:
-      QUEUES: &amp;quot;celery&amp;quot;
-      WORKERS_COUNT: 1
-      # 邮箱
-      REDASH_MAIL_SERVER: &amp;quot;smtp服务器地址&amp;quot;
-      REDASH_MAIL_PORT: 80
-      REDASH_MAIL_USE_TLS: &amp;quot;false&amp;quot;
-      REDASH_MAIL_USERNAME: &amp;quot;邮箱&amp;quot;
-      REDASH_MAIL_PASSWORD: &amp;quot;邮箱密码&amp;quot;
-      REDASH_MAIL_DEFAULT_SENDER: &amp;quot;邮箱&amp;quot;
-      REDASH_HOST: &amp;quot;http://部署地址&amp;quot;
-
-      #python
-      REDASH_ADDITIONAL_QUERY_RUNNERS: &amp;quot;redash.query_runner.python&amp;quot;
-  scheduled_worker:
-    &amp;lt;&amp;lt;: *redash-service
-    command: worker
-    environment:
-      QUEUES: &amp;quot;scheduled_queries,schemas&amp;quot;
-      WORKERS_COUNT: 1
-      # 邮箱
-      REDASH_MAIL_SERVER: &amp;quot;smtp服务器地址&amp;quot;
-      REDASH_MAIL_PORT: 80
-      REDASH_MAIL_USE_TLS: &amp;quot;false&amp;quot;
-      REDASH_MAIL_USERNAME: &amp;quot;邮箱&amp;quot;
-      REDASH_MAIL_PASSWORD: &amp;quot;邮箱密码&amp;quot;
-      REDASH_MAIL_DEFAULT_SENDER: &amp;quot;邮箱&amp;quot;
-      REDASH_HOST: &amp;quot;http://部署地址&amp;quot;
-
-      #python
-      REDASH_ADDITIONAL_QUERY_RUNNERS: &amp;quot;redash.query_runner.python&amp;quot;
-  adhoc_worker:
-    &amp;lt;&amp;lt;: *redash-service
-    command: worker
-    environment:
-      QUEUES: &amp;quot;queries&amp;quot;
-      WORKERS_COUNT: 2
-      # 邮箱
-      REDASH_MAIL_SERVER: &amp;quot;smtp服务器地址&amp;quot;
-      REDASH_MAIL_PORT: 80
-      REDASH_MAIL_USE_TLS: &amp;quot;false&amp;quot;
-      REDASH_MAIL_USERNAME: &amp;quot;邮箱&amp;quot;
-      REDASH_MAIL_PASSWORD: &amp;quot;邮箱密码&amp;quot;
-      REDASH_MAIL_DEFAULT_SENDER: &amp;quot;邮箱&amp;quot;
-      REDASH_HOST: &amp;quot;http://部署地址&amp;quot;
-      #python
-      REDASH_ADDITIONAL_QUERY_RUNNERS: &amp;quot;redash.query_runner.python&amp;quot;
-  redis:
-    image: redis:5.0-alpine
-    restart: always
-  postgres:
-    image: postgres:9.5-alpine
-    env_file: /opt/redash/env
-    volumes:
-      - /opt/redash/postgres-data:/var/lib/postgresql/data
-    restart: always
-  nginx:
-    image: redash/nginx:latest
-    ports:
-      - &amp;quot;80:80&amp;quot;
-    depends_on:
-      - server
-    links:
-      - server:redash
-    restart: always
-
-新建个yml文件，把以上代码根据自己的信息修改好之后填进去，存在/opt/redash下面，命名为：docker-compose.yml
-以上准备工作都已经完成！！！
-最后一步：
-执行两个条命令：
-sudo docker-compose run --rm server create_db 
-sudo docker-compose up -d
-
-第一条是创建新的数据库
-第二条是启动
-会跑一会，等全部执行完毕，就好了
-直接输入你部署的ip到浏览器就可以到管理员的设置页面了
-！！！
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://www.elazer.tk/post/krmzbROCj">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://www.elazer.tk/post/hello-gridea">
-                        【BI工具】Redash的部署和使用系列（一）：简单介绍
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-12</time>
-                    
-                        <a href="https://www.elazer.tk/tag/redash" class="post-tag i-tag
-                            i-tag-other_4">
-            #redash
-        </a>
-                        
-                        <a href="https://www.elazer.tk/tag/gridea" class="post-tag i-tag
-                            i-tag-banana">
-            #Gridea
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                        <a href="https://www.elazer.tk/post/hello-gridea" class="post-feature-image" style="background-image:url(https://www.elazer.tk/post-images/hello-gridea.png) ">
-                        </a>
-                        
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            本系列文章参考了一些网上的文章和官方文档：
- MarsW-Redash
-Redash 官文
-由于喜欢折腾，也希望自己成长，所以喜欢搞一些开源的东西，并不喜欢使用其他收费的数据分析工具的方案，所以开源的三大数据分析平台都用过，包括Superset,Metabase,Redash等；各有千秋吧，本次主要是用redash的开源工具；至于为什么，网上的文章很多，我就不说了
-我选择redash的主要原因：
-
-Python写的，而且代码逻辑清晰，未来有需要可以做二次开发
-支持几乎所有的数据库，比较方便
-之前superset用过，但是感觉不够简洁，尤其是在做权限管理的时候，虽然redash的权限管理简单粗暴，但是简单
-还有别的。。。。就不说了，大家可以自己做判断，毕竟每个人的需求不一样
-
-** 好了这可以说的一个目录吧，我将从安装、使用、维护等三个方面做此系列：**
-
-部署
-redash的基本逻辑
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://www.elazer.tk/post/hello-gridea">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-                <!-- 翻页 -->
-                
-                </div>
-                <!--  -->
-                <div class="main-container-middle"></div>
-                <!--  -->
-                <div id="sidebar" class="main-container-right">
-
-                    <!-- 个人信息 -->
-                    
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://www.elazer.tk/images/avatar.png?v=1564717899774)">
-        </div>
-        <h1 class="id_card-title">
-            Rocky|Think
-        </h1>
-        <h2 class="id_card-description">
-            一件小事
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                    <!-- facebook -->
-                                    
-
-        </div>
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
     </div>
-    
-
-                        <!-- 公告栏 -->
-                        
-    <div class="notice-card i-card ">
-        <div class="notice-title i-card-title">公告</div>
-        <div class="notice-content">
-            ,,
-        </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/RockyThink" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     </div>
-    
-
-                </div>
-            </div>
-
-
-
-            <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://www.elazer.tk/atom.xml" target="_blank">RSS</a>
+    <div class="site-description">
+      一件小事
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://www.elazer.tk/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://www.elazer.tk/post/krmzbROCj">
+                  <h2 class="post-title">【BI工具】Redash的部署和使用系列（二）：安装部署</h2>
+                </a>
+                <div class="post-date">
+                  2019-07-12
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://www.elazer.tk/post/krmzbROCj">
+                  <div class="feature-container" style="background-image: url('https://www.elazer.tk/post-images/krmzbROCj.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://www.elazer.tk/post/hello-gridea">
+                  <h2 class="post-title">【BI工具】Redash的部署和使用系列（一）：简单介绍</h2>
+                </a>
+                <div class="post-date">
+                  2019-07-12
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://www.elazer.tk/post/hello-gridea">
+                  <div class="feature-container" style="background-image: url('https://www.elazer.tk/post-images/hello-gridea.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
+  
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
 
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-</body>
 
+
+
+  </body>
 </html>
