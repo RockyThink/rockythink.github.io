@@ -1,155 +1,217 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>Gridea | Rocky|Think</title>
-<meta name="description" content="一件小事">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://www.elazer.tk/favicon.ico?v=1564670769456">
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    Gridea | Rocky|Think
+</title>
+<link rel="shortcut icon" href="https://www.elazer.tk/favicon.ico?v=1564717876182">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://www.elazer.tk/styles/main.css">
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://www.elazer.tk/media/js/jquery.sticky-sidebar.min.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+</head>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143767475-1"></script>
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://www.elazer.tk">
+                <img class="avatar" src="https://www.elazer.tk/images/avatar.png?v=1564717876182" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    Rocky|Think
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
+    </div>
+</div>
+
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
 
-  gtag('config', 'UA-143767475-1');
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
 </script>
 
-
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://www.elazer.tk">
-        <img src="https://www.elazer.tk/images/avatar.png?v=1564670769456" class="site-logo">
-        <h1 class="site-title">Rocky|Think</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+            <div id="main-content" class="post-container main-container">
+                <div id="content" class="main-container-left">
+                    
+    <div class="i-card">
+        <b>标签：#
+        Gridea</b>
     </div>
-    <div>
-      
+    
         
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-          <a class="social-link" href="https://github.com/RockyThink" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      一件小事
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://www.elazer.tk/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: Gridea</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://www.elazer.tk/post/hello-gridea">
-                  <h2 class="post-title">【BI工具】Redash的部署和使用系列（一）：简单介绍</h2>
-                </a>
-                <div class="post-date">
-                  2019-07-12
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://www.elazer.tk/post/hello-gridea">
+                        【BI工具】Redash的部署和使用系列（一）：简单介绍
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-12</time>
+                    
+                        <a href="https://www.elazer.tk/tag/redash" class="post-tag i-tag
+                            i-tag-success">
+            #redash
+        </a>
+                        
+                        <a href="https://www.elazer.tk/tag/gridea" class="post-tag i-tag
+                            i-tag-other_4">
+            #Gridea
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  
+                <div class="post-article">
+                    
+                        <a href="https://www.elazer.tk/post/hello-gridea" class="post-feature-image" style="background-image:url(https://www.elazer.tk/post-images/hello-gridea.png) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            本系列文章参考了一些网上的文章和官方文档：
+ MarsW-Redash
+Redash 官文
+由于喜欢折腾，也希望自己成长，所以喜欢搞一些开源的东西，并不喜欢使用其他收费的数据分析工具的方案，所以开源的三大数据分析平台都用过，包括Superset,Metabase,Redash等；各有千秋吧，本次主要是用redash的开源工具；至于为什么，网上的文章很多，我就不说了
+我选择redash的主要原因：
+
+Python写的，而且代码逻辑清晰，未来有需要可以做二次开发
+支持几乎所有的数据库，比较方便
+之前superset用过，但是感觉不够简洁，尤其是在做权限管理的时候，虽然redash的权限管理简单粗暴，但是简单
+还有别的。。。。就不说了，大家可以自己做判断，毕竟每个人的需求不一样
+
+** 好了这可以说的一个目录吧，我将从安装、使用、维护等三个方面做此系列：**
+
+部署
+redash的基本逻辑
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://www.elazer.tk/post/hello-gridea">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
+            
+                <!-- 翻页 -->
+                
+                </div>
+                <!--  -->
+                <div class="main-container-middle"></div>
+                <!--  -->
+                <div id="sidebar" class="main-container-right">
 
-          <div class="pagination-container">
-  
-  
-</div>
+                    <!-- 个人信息 -->
+                    
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://www.elazer.tk/images/avatar.png?v=1564717876182)">
+        </div>
+        <h1 class="id_card-title">
+            Rocky|Think
+        </h1>
+        <h2 class="id_card-description">
+            一件小事
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                    <!-- twitter -->
+                    
+                            <!-- weibo -->
+                            
+                                    <!-- facebook -->
+                                    
 
         </div>
-      </div>
     </div>
+    
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+                        <!-- 公告栏 -->
+                        
 
-<script type="application/javascript">
+                </div>
+            </div>
 
-AOS.init();
 
-hljs.initHighlightingOnLoad()
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://www.elazer.tk/atom.xml" target="_blank">RSS</a>
+</div>
 
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+</body>
 
-
-
-  </body>
 </html>
