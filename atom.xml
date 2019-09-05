@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.elazer.tk</id>
     <title>Rocky|Think</title>
-    <updated>2019-08-02T04:24:24.911Z</updated>
+    <updated>2019-09-05T08:53:21.345Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.elazer.tk"/>
     <link rel="self" href="https://www.elazer.tk/atom.xml"/>
@@ -11,7 +11,128 @@
     <icon>https://www.elazer.tk/favicon.ico</icon>
     <rights>All rights reserved 2019, Rocky|Think</rights>
     <entry>
-        <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（二）：安装部署]]></title>
+        <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（二）：开发环境的安装部署]]></title>
+        <id>https://www.elazer.tk/post/T2etSPhvk</id>
+        <link href="https://www.elazer.tk/post/T2etSPhvk">
+        </link>
+        <updated>2019-09-05T08:23:45.000Z</updated>
+        <content type="html"><![CDATA[<p>docker 的安装部署上一篇已经讲了<br>
+下面我记录下开发环境的部署吧<br>
+（mac环境下）</p>
+<h2 id="不废话开始">不废话，开始！！</h2>
+<h3 id="一-准备工作">一、准备工作：</h3>
+<ul>
+<li>准备python 2.7环境</li>
+<li>postgresql安装</li>
+<li>redis安装</li>
+<li>node安装</li>
+<li>在github上下载源码包</li>
+</ul>
+<p>1、python 2.7环境<br>
+推荐先装个anaconda，这样不仅方便搭建2.7环境，而且接下来很多事情都可以通过conda解决；<br>
+安装anaconda：<br>
+https://www.anaconda.com/distribution/<br>
+下载好后，直接下一步下一步。。。<br>
+linux 的话就是执行下载下来的sh文件，一路回车</p>
+<p>安装好后，打开终端：<br>
+换conda清华源：</p>
+<pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge 
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+</code></pre>
+<p>创建新环境：<br>
+<code>conda create redash python==2.7</code><br>
+然后切换到redash环境<br>
+<code>source activate redash</code></p>
+<p>2、postgresql 安装<br>
+安装<br>
+<code>brew install postgresql</code><br>
+初始化：<br>
+<code>initdb /usr/local/var/postgres</code><br>
+启动<br>
+<code>pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start</code></p>
+<p>3、redis安装<br>
+安装<br>
+<code>brew install redis</code><br>
+启动<br>
+<code>/usr/local/bin/redis-server /usr/local/etc/redis.conf</code></p>
+<p>4、node安装<br>
+下载地址：https://nodejs.org/zh-cn/download/current/<br>
+然后打开安装就好了<br>
+更改npm源：<br>
+<code>npm config set registry https://registry.npm.taobao.org</code></p>
+<p>5、下载redash<br>
+进入/opt/目录，没有自建一个吧，其实redash放在别处也行，但是无所谓啦，怕后面麻烦，最好下载正式版：<br>
+https://github.com/getredash/redash/archive/v7.0.0.tar.gz<br>
+好啦<br>
+下载好解压<br>
+然后进入解压出来的文件夹</p>
+<p>至此准备工作基本结束</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（二）：开发环境的安装部署]]></title>
+        <id>https://www.elazer.tk/post/redash_dev</id>
+        <link href="https://www.elazer.tk/post/redash_dev">
+        </link>
+        <updated>2019-09-05T08:23:45.000Z</updated>
+        <content type="html"><![CDATA[<p>docker 的安装部署上一篇已经讲了<br>
+下面我记录下开发环境的部署吧<br>
+（mac环境下）</p>
+<h2 id="不废话开始">不废话，开始！！</h2>
+<h3 id="一-准备工作">一、准备工作：</h3>
+<ul>
+<li>准备python 2.7环境</li>
+<li>postgresql安装</li>
+<li>redis安装</li>
+<li>node安装</li>
+<li>在github上下载源码包</li>
+</ul>
+<p>1、python 2.7环境<br>
+推荐先装个anaconda，这样不仅方便搭建2.7环境，而且接下来很多事情都可以通过conda解决；<br>
+安装anaconda：<br>
+https://www.anaconda.com/distribution/<br>
+下载好后，直接下一步下一步。。。<br>
+linux 的话就是执行下载下来的sh文件，一路回车</p>
+<p>安装好后，打开终端：<br>
+换conda清华源：</p>
+<pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge 
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+</code></pre>
+<p>创建新环境：<br>
+<code>conda create redash python==2.7</code><br>
+然后切换到redash环境<br>
+<code>source activate redash</code></p>
+<p>2、postgresql 安装<br>
+安装<br>
+<code>brew install postgresql</code><br>
+初始化：<br>
+<code>initdb /usr/local/var/postgres</code><br>
+启动<br>
+<code>pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start</code></p>
+<p>3、redis安装<br>
+安装<br>
+<code>brew install redis</code><br>
+启动<br>
+<code>/usr/local/bin/redis-server /usr/local/etc/redis.conf</code></p>
+<p>4、node安装<br>
+下载地址：https://nodejs.org/zh-cn/download/current/<br>
+然后打开安装就好了<br>
+更改npm源：<br>
+<code>npm config set registry https://registry.npm.taobao.org</code></p>
+<p>5、下载redash<br>
+进入/opt/目录，没有自建一个吧，其实redash放在别处也行，但是无所谓啦，怕后面麻烦，最好下载正式版：<br>
+https://github.com/getredash/redash/archive/v7.0.0.tar.gz<br>
+好啦<br>
+下载好解压<br>
+然后进入解压出来的文件夹</p>
+<p>至此准备工作基本结束</p>
+<p>二、开始部署</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（二）：docker安装部署]]></title>
         <id>https://www.elazer.tk/post/krmzbROCj</id>
         <link href="https://www.elazer.tk/post/krmzbROCj">
         </link>
