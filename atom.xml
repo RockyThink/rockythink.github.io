@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.elazer.tk</id>
     <title>Rocky|Think</title>
-    <updated>2019-09-05T08:53:58.289Z</updated>
+    <updated>2019-09-05T09:14:07.673Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.elazer.tk"/>
     <link rel="self" href="https://www.elazer.tk/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://www.elazer.tk/favicon.ico</icon>
     <rights>All rights reserved 2019, Rocky|Think</rights>
     <entry>
-        <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（二）：开发环境的安装部署]]></title>
+        <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（三）：开发环境的安装部署]]></title>
         <id>https://www.elazer.tk/post/T2etSPhvk</id>
         <link href="https://www.elazer.tk/post/T2etSPhvk">
         </link>
