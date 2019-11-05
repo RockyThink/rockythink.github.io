@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.elazer.tk</id>
     <title>Rocky|Think</title>
-    <updated>2019-09-05T09:14:07.673Z</updated>
+    <updated>2019-11-05T13:42:32.328Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.elazer.tk"/>
     <link rel="self" href="https://www.elazer.tk/atom.xml"/>
@@ -10,6 +10,159 @@
     <logo>https://www.elazer.tk/images/avatar.png</logo>
     <icon>https://www.elazer.tk/favicon.ico</icon>
     <rights>All rights reserved 2019, Rocky|Think</rights>
+    <entry>
+        <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（四）：设置SSL访问]]></title>
+        <id>https://www.elazer.tk/post/0v-3GyyY-</id>
+        <link href="https://www.elazer.tk/post/0v-3GyyY-">
+        </link>
+        <updated>2019-11-05T12:51:48.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>确保您的域名已经成功解析到您的服务器IP地址</li>
+<li>在root用户权限下（<code>sudo su</code>）</li>
+<li>创建<code>nginx</code>文件夹在<code>/opt/redash</code>目录下(<code>mkdir /opt/redash/nginx</code> )</li>
+<li>创建<code>certs</code> 和 <code>certs-data</code>在<code>niginx</code>文件夹下(<code>mkdir /opt/redash/nginx/certs</code>;<code>mkdir /opt/redash/nginx/certs-data</code>)</li>
+<li>创建<code>nginx.conf</code>文件夹下(<code>touch /opt/redash/nginx/nginx.conf</code>),并编辑如下内容（注意替换<code>example.redashapp.com</code>成为你的域名）<pre><code>upstream redash {
+    server redash:5000;
+}
+
+server {
+    listen      80;
+    listen [::]:80;
+    server_name example.redashapp.com;
+
+    location ^~ /ping {
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+
+        proxy_pass       http://redash;
+    }
+
+    location / {
+        rewrite ^ https://$host$request_uri? permanent;
+    }
+
+    location ^~ /.well-known {
+        allow all;
+        root  /data/letsencrypt/;
+    }
+}
+</code></pre>
+</li>
+<li>编辑 <code>/opt/redash/docker-compose.yml</code> :</li>
+</ol>
+<pre><code>nginx:
+ image: nginx:latest
+ ports:
+   - &quot;80:80&quot;
+   - &quot;443:443&quot;
+ depends_on:
+   - server
+ links:
+   - server:redash
+ volumes:
+   - /opt/redash/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+   - /opt/redash/nginx/certs:/etc/letsencrypt
+   - /opt/redash/nginx/certs-data:/data/letsencrypt
+ restart: always
+</code></pre>
+<ol start="11">
+<li>更新Docker Compose: <code>docker-compose up -d</code>.</li>
+<li>创建ssl秘钥: (记得修改域名)</li>
+</ol>
+<pre><code>docker run -it --rm \
+   -v /opt/redash/nginx/certs:/etc/letsencrypt \
+   -v /opt/redash/nginx/certs-data:/data/letsencrypt \
+   deliverous/certbot \
+   certonly \
+   --webroot --webroot-path=/data/letsencrypt \
+   -d example.redashapp.com
+</code></pre>
+<ol start="11">
+<li>如果上述过程没问题, 更新nginx.conf文件为如下（记得改成自己的域名）:</li>
+</ol>
+<pre><code>upstream redash {
+    server redash:5000;
+}
+
+server {
+    listen      80;
+    listen [::]:80;
+    server_name example.redashapp.com;
+
+    location ^~ /ping {
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+
+        proxy_pass       http://redash;
+    }
+
+    location / {
+        rewrite ^ https://$host$request_uri? permanent;
+    }
+
+    location ^~ /.well-known {
+        allow all;
+        root  /data/letsencrypt/;
+    }
+}
+
+server {
+ listen      443           ssl http2;
+ listen [::]:443           ssl http2;
+ server_name               example.redashapp.com;
+
+ add_header                Strict-Transport-Security &quot;max-age=31536000&quot; always;
+
+ ssl_session_cache         shared:SSL:20m;
+ ssl_session_timeout       10m;
+
+ ssl_protocols             TLSv1 TLSv1.1 TLSv1.2;
+ ssl_prefer_server_ciphers on;
+ ssl_ciphers               &quot;ECDH+AESGCM:ECDH+AES256:ECDH+AES128:!ADH:!AECDH:!MD5;&quot;;
+
+ ssl_stapling              on;
+ ssl_stapling_verify       on;
+ resolver                  8.8.8.8 8.8.4.4;
+
+ ssl_certificate           /etc/letsencrypt/live/example.redashapp.com/fullchain.pem;
+ ssl_certificate_key       /etc/letsencrypt/live/example.redashapp.com/privkey.pem;
+ ssl_trusted_certificate   /etc/letsencrypt/live/example.redashapp.com/chain.pem;
+
+ access_log                /dev/stdout;
+ error_log                 /dev/stderr info;
+
+ # other configs
+
+ location / {
+     proxy_set_header Host $http_host;
+     proxy_set_header X-Real-IP $remote_addr;
+     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+     proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+
+     proxy_pass       http://redash;
+ }
+}    
+ ```
+11. 重启 nginx: `docker-compose restart nginx`.
+12. 好了，现在可以用https://你的域名  访问redash了. 👏
+
+如果未来需要改ssl，可以用下面的命令:
+
+</code></pre>
+<p>$ docker run -t --rm <br>
+-v certs:/etc/letsencrypt <br>
+-v certs-data:/data/letsencrypt <br>
+deliverous/certbot <br>
+renew <br>
+--webroot --webroot-path=/data/letsencrypt<br>
+$ docker-compose kill -s HUP nginx</p>
+<pre><code></code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（三）：开发环境的安装部署]]></title>
         <id>https://www.elazer.tk/post/T2etSPhvk</id>
