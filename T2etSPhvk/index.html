@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【BI工具】Redash的部署和使用系列（三）：开发环境的安装部署 | Rocky|Think</title>
+<meta name="description" content="一件小事">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://www.elazer.tk/favicon.ico?v=1590473813262">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://www.elazer.tk/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143767475-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143767475-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://www.elazer.tk">
+        <img src="https://www.elazer.tk/images/avatar.png?v=1590473813262" class="site-logo">
+        <h1 class="site-title">Rocky|Think</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一件小事
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://www.elazer.tk/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【BI工具】Redash的部署和使用系列（三）：开发环境的安装部署</h2>
+            <div class="post-date">2019-09-05</div>
+            
+            <div class="post-content">
+              <p>docker 的安装部署上一篇已经讲了<br>
+下面我记录下开发环境的部署吧<br>
+（mac环境下）</p>
+<h2 id="不废话开始">不废话，开始！！</h2>
+<h3 id="一-准备工作">一、准备工作：</h3>
+<ul>
+<li>准备python 2.7环境</li>
+<li>postgresql安装</li>
+<li>redis安装</li>
+<li>node安装</li>
+<li>在github上下载源码包</li>
+</ul>
+<p>1、python 2.7环境<br>
+推荐先装个anaconda，这样不仅方便搭建2.7环境，而且接下来很多事情都可以通过conda解决；<br>
+安装anaconda：<br>
+https://www.anaconda.com/distribution/<br>
+下载好后，直接下一步下一步。。。<br>
+linux 的话就是执行下载下来的sh文件，一路回车</p>
+<p>安装好后，打开终端：<br>
+换conda清华源：</p>
+<pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge 
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+</code></pre>
+<p>创建新环境：<br>
+<code>conda create redash python==2.7</code><br>
+然后切换到redash环境<br>
+<code>source activate redash</code></p>
+<p>2、postgresql 安装<br>
+安装<br>
+<code>brew install postgresql</code><br>
+初始化：<br>
+<code>initdb /usr/local/var/postgres</code><br>
+启动<br>
+<code>pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start</code></p>
+<p>3、redis安装<br>
+安装<br>
+<code>brew install redis</code><br>
+启动<br>
+<code>/usr/local/bin/redis-server /usr/local/etc/redis.conf</code></p>
+<p>4、node安装<br>
+下载地址：https://nodejs.org/zh-cn/download/current/<br>
+然后打开安装就好了<br>
+更改npm源：<br>
+<code>npm config set registry https://registry.npm.taobao.org</code></p>
+<p>5、下载redash<br>
+进入/opt/目录，没有自建一个吧，其实redash放在别处也行，但是无所谓啦，怕后面麻烦，最好下载正式版：<br>
+https://github.com/getredash/redash/archive/v7.0.0.tar.gz<br>
+好啦<br>
+下载好解压<br>
+然后进入解压出来的文件夹</p>
+<p>至此准备工作基本结束</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://www.elazer.tk/krmzbROCj/">
+                  <h3 class="post-title">
+                    【BI工具】Redash的部署和使用系列（二）：docker安装部署
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '91b939421807157f20f3',
+        clientSecret: 'c1050ef51bc8d5f4b7f42f809d5d9c5801bc7516',
+        repo: 'rockythink.github.io',
+        owner: 'rockythink',
+        admin: ['rockythink'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
