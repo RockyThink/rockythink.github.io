@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://www.rockythink.tk</id>
+    <id>https://rockythink.tk</id>
     <title>Rocky|Think</title>
-    <updated>2020-06-08T03:37:47.551Z</updated>
+    <updated>2020-06-08T06:05:54.773Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://www.rockythink.tk"/>
-    <link rel="self" href="https://www.rockythink.tk/atom.xml"/>
+    <link rel="alternate" href="https://rockythink.tk"/>
+    <link rel="self" href="https://rockythink.tk/atom.xml"/>
     <subtitle>一件小事</subtitle>
-    <logo>https://www.rockythink.tk/images/avatar.png</logo>
-    <icon>https://www.rockythink.tk/favicon.ico</icon>
+    <logo>https://rockythink.tk/images/avatar.png</logo>
+    <icon>https://rockythink.tk/favicon.ico</icon>
     <rights>All rights reserved 2020, Rocky|Think</rights>
     <entry>
         <title type="html"><![CDATA[【Matplotlib】使用指南]]></title>
-        <id>https://www.rockythink.tk/ZF4tM7oyV/</id>
-        <link href="https://www.rockythink.tk/ZF4tM7oyV/">
+        <id>https://rockythink.tk/ZF4tM7oyV/</id>
+        <link href="https://rockythink.tk/ZF4tM7oyV/">
         </link>
         <updated>2020-05-26T07:46:48.000Z</updated>
         <content type="html"><![CDATA[<p>本教程介绍一些基本的使用模式和最佳实践，以帮助您开始使用Matplotlib。</p>
@@ -31,8 +31,8 @@ import numpy as np
     </entry>
     <entry>
         <title type="html"><![CDATA[【Matplotlib】教程]]></title>
-        <id>https://www.rockythink.tk/-F_4vu3Ig/</id>
-        <link href="https://www.rockythink.tk/-F_4vu3Ig/">
+        <id>https://rockythink.tk/-F_4vu3Ig/</id>
+        <link href="https://rockythink.tk/-F_4vu3Ig/">
         </link>
         <updated>2020-05-26T07:36:19.000Z</updated>
         <content type="html"><![CDATA[<p>这里包含使用Matplotlib的指南，分为初级、中级和高级部分，同事涵盖了特殊主题的部分。</p>
@@ -50,8 +50,8 @@ import numpy as np
     </entry>
     <entry>
         <title type="html"><![CDATA[【Matplotlib】安装]]></title>
-        <id>https://www.rockythink.tk/XMrsqCLKI/</id>
-        <link href="https://www.rockythink.tk/XMrsqCLKI/">
+        <id>https://rockythink.tk/XMrsqCLKI/</id>
+        <link href="https://rockythink.tk/XMrsqCLKI/">
         </link>
         <updated>2020-05-26T07:01:52.000Z</updated>
         <content type="html"><![CDATA[<h2 id="安装正式版本">安装正式版本</h2>
@@ -80,8 +80,8 @@ python -m pip install -U matplotlib
     </entry>
     <entry>
         <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（四）：设置SSL访问]]></title>
-        <id>https://www.rockythink.tk/redash_4/</id>
-        <link href="https://www.rockythink.tk/redash_4/">
+        <id>https://rockythink.tk/redash_4/</id>
+        <link href="https://rockythink.tk/redash_4/">
         </link>
         <updated>2019-11-05T12:51:48.000Z</updated>
         <content type="html"><![CDATA[<ol>
@@ -233,8 +233,8 @@ $ docker-compose kill -s HUP nginx</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（三）：开发环境的安装部署]]></title>
-        <id>https://www.rockythink.tk/T2etSPhvk/</id>
-        <link href="https://www.rockythink.tk/T2etSPhvk/">
+        <id>https://rockythink.tk/T2etSPhvk/</id>
+        <link href="https://rockythink.tk/T2etSPhvk/">
         </link>
         <updated>2019-09-05T08:23:45.000Z</updated>
         <content type="html"><![CDATA[<p>docker 的安装部署上一篇已经讲了<br>
@@ -293,8 +293,8 @@ https://github.com/getredash/redash/archive/v7.0.0.tar.gz<br>
     </entry>
     <entry>
         <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（二）：docker安装部署]]></title>
-        <id>https://www.rockythink.tk/krmzbROCj/</id>
-        <link href="https://www.rockythink.tk/krmzbROCj/">
+        <id>https://rockythink.tk/krmzbROCj/</id>
+        <link href="https://rockythink.tk/krmzbROCj/">
         </link>
         <updated>2019-07-12T07:57:43.000Z</updated>
         <content type="html"><![CDATA[<p>我这边是用官方提供的docker方式部署的，也有直接部署在系统环境中的，这里推荐一篇文章：<a href="http://guzhenping.com/2018/11/02/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0--Redash/">Redash开发指南</a>，他有个微信群，大家可以在文章里加下，如果有对二次开发有需求的同学；</p>
@@ -309,7 +309,7 @@ Mac版本和Windows版本已经集成了docker-compose，linux好像没有；</p
 <p>这是地址<a href="https://cr.console.aliyun.com/#/accelerator">阿里云容器镜像服务</a>，打开登录后,左下角有个镜</p>
 <p>像加速器，就能看到自己的加速链接了，一人一码，不要钱</p>
 <p>不仅如此，页面中把加速器的配置方法都写上了，我在这里就不阐述了<br>
-<img src="https://www.rockythink.tk/post-images/1562921491978.png" alt="" loading="lazy"></p>
+<img src="https://rockythink.tk/post-images/1562921491978.png" alt="" loading="lazy"></p>
 <p>步骤二：<br>
 1、建立好配置文件夹：</p>
 <pre><code>sudo mkdir /opt/redash
@@ -474,8 +474,8 @@ sudo docker-compose up -d
     </entry>
     <entry>
         <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（一）：简单介绍]]></title>
-        <id>https://www.rockythink.tk/hello-gridea/</id>
-        <link href="https://www.rockythink.tk/hello-gridea/">
+        <id>https://rockythink.tk/hello-gridea/</id>
+        <link href="https://rockythink.tk/hello-gridea/">
         </link>
         <updated>2019-07-11T16:00:00.000Z</updated>
         <content type="html"><![CDATA[<p>本系列文章参考了一些网上的文章和官方文档：<br>
