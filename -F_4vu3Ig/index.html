@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | Rocky|Think</title>
+<title>【Matplotlib】教程 | Rocky|Think</title>
 <meta name="description" content="一件小事">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://www.rockythink.tk/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -100,16 +106,46 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">【Matplotlib】教程</h2>
+            <div class="post-date">2020-05-26</div>
             
-              <a class="tag" href="https://www.rockythink.tk/redash/">redash</a>
+            <div class="post-content">
+              <p>这里包含使用Matplotlib的指南，分为初级、中级和高级部分，同事涵盖了特殊主题的部分。</p>
+<h2 id="初级入门">初级入门</h2>
+<ul>
+<li>[使用指南] ()</li>
+<li><a href="">Pyplot教程</a></li>
+<li><a href="">Matplotlib示例</a></li>
+<li><a href="">图片教程</a></li>
+<li><a href="">plot生命周期</a></li>
+<li><a href="">使用样式表和rcParams定制Matplotlib</a></li>
+</ul>
+<h2 id="中级">中级</h2>
+
+            </div>
             
-              <a class="tag" href="https://www.rockythink.tk/sxhfMaTFf/">Python</a>
             
-              <a class="tag" href="https://www.rockythink.tk/gridea/">Gridea</a>
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://www.rockythink.tk/XMrsqCLKI/">
+                  <h3 class="post-title">
+                    【Matplotlib】安装
+                  </h3>
+                </a>
+              </div>
             
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
           </div>
+
         </div>
       </div>
     </div>
@@ -130,6 +166,29 @@ var app = new Vue({
 })
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '5e50866012e2e48269ac',
+        clientSecret: '5d853585f7107257b98cf41e455af25caaabf424',
+        repo: 'rockythink.github.io',
+        owner: 'rockythink',
+        admin: ['rockythink'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 

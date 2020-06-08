@@ -1,19 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://www.elazer.tk</id>
+    <id>https://www.rockythink.tk</id>
     <title>Rocky|Think</title>
-    <updated>2020-05-26T07:01:08.510Z</updated>
+    <updated>2020-06-08T02:54:03.527Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://www.elazer.tk"/>
-    <link rel="self" href="https://www.elazer.tk/atom.xml"/>
+    <link rel="alternate" href="https://www.rockythink.tk"/>
+    <link rel="self" href="https://www.rockythink.tk/atom.xml"/>
     <subtitle>一件小事</subtitle>
-    <logo>https://www.elazer.tk/images/avatar.png</logo>
-    <icon>https://www.elazer.tk/favicon.ico</icon>
+    <logo>https://www.rockythink.tk/images/avatar.png</logo>
+    <icon>https://www.rockythink.tk/favicon.ico</icon>
     <rights>All rights reserved 2020, Rocky|Think</rights>
     <entry>
+        <title type="html"><![CDATA[【Matplotlib】使用指南]]></title>
+        <id>https://www.rockythink.tk/ZF4tM7oyV/</id>
+        <link href="https://www.rockythink.tk/ZF4tM7oyV/">
+        </link>
+        <updated>2020-05-26T07:46:48.000Z</updated>
+        <content type="html"><![CDATA[<p>本教程介绍一些基本的使用模式和最佳实践，以帮助您开始使用Matplotlib。</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+</code></pre>
+<h2 id="一个简单的示例">一个简单的示例</h2>
+<p>Matplotlib 有三层</p>
+<h3 id="最底层figure">最底层：Figure</h3>
+<p>这个可以理解成一个画板对象，所有图形都是在这个画板对象上绘制的</p>
+<h3 id="第二层-axes-坐标轴">第二层 Axes (坐标轴)</h3>
+<p>每个图形都是基于一个坐标轴来绘制的，二维图形就是x,y,三维就是xyz类似这样</p>
+<h3 id="第三层-坐标">第三层 坐标</h3>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Matplotlib】教程]]></title>
+        <id>https://www.rockythink.tk/-F_4vu3Ig/</id>
+        <link href="https://www.rockythink.tk/-F_4vu3Ig/">
+        </link>
+        <updated>2020-05-26T07:36:19.000Z</updated>
+        <content type="html"><![CDATA[<p>这里包含使用Matplotlib的指南，分为初级、中级和高级部分，同事涵盖了特殊主题的部分。</p>
+<h2 id="初级入门">初级入门</h2>
+<ul>
+<li>[使用指南] ()</li>
+<li><a href="">Pyplot教程</a></li>
+<li><a href="">Matplotlib示例</a></li>
+<li><a href="">图片教程</a></li>
+<li><a href="">plot生命周期</a></li>
+<li><a href="">使用样式表和rcParams定制Matplotlib</a></li>
+</ul>
+<h2 id="中级">中级</h2>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Matplotlib】安装]]></title>
+        <id>https://www.rockythink.tk/XMrsqCLKI/</id>
+        <link href="https://www.rockythink.tk/XMrsqCLKI/">
+        </link>
+        <updated>2020-05-26T07:01:52.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="安装正式版本">安装正式版本</h2>
+<p>Matplotlib以及其依赖项可用于macOS，Windows和Linux发行版：</p>
+<pre><code>python -m pip install -U pip
+python -m pip install -U matplotlib
+</code></pre>
+<blockquote>
+<h3 id="注意">注意</h3>
+<p>这些服务可以直接引用：Agg, ps, pdf, svg 和 TkAgg。<br>
+如需要支持其他GUI框架，需要安装其他依耐项</p>
+</blockquote>
+<p>建议安装<code>Ipyhon</code> 进行交互</p>
+<h3 id="测试数据">测试数据</h3>
+<p>PyPI下载页面上的<code>wheels (*.whl)</code>不包含测试数据或示例代码。<br>
+如果想尝试发行版中的演示，请下载'.tar.gz'文件，查看examples目录。</p>
+<p>执行测试套件：</p>
+<ul>
+<li>从源码中提取 <code>lib/matplotlib/tests</code> 或者 <code>lib/mpl_toolkits/tests</code> 目录</li>
+<li>安装依赖项： pytest, Pillow, MiKTeX, GhostScript, ffmpeg, avconv, ImageMagick, 以及Inkscape;</li>
+<li>执行 <code>python -mpytest</code>;</li>
+</ul>
+<h2 id="安装其他发行版本">安装其他发行版本</h2>
+<h1 id="译者建议建议安装anaconda省事">译者建议：建议安装anaconda，省事！</h1>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（四）：设置SSL访问]]></title>
-        <id>https://www.elazer.tk/redash_4/</id>
-        <link href="https://www.elazer.tk/redash_4/">
+        <id>https://www.rockythink.tk/redash_4/</id>
+        <link href="https://www.rockythink.tk/redash_4/">
         </link>
         <updated>2019-11-05T12:51:48.000Z</updated>
         <content type="html"><![CDATA[<ol>
@@ -165,8 +233,8 @@ $ docker-compose kill -s HUP nginx</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（三）：开发环境的安装部署]]></title>
-        <id>https://www.elazer.tk/T2etSPhvk/</id>
-        <link href="https://www.elazer.tk/T2etSPhvk/">
+        <id>https://www.rockythink.tk/T2etSPhvk/</id>
+        <link href="https://www.rockythink.tk/T2etSPhvk/">
         </link>
         <updated>2019-09-05T08:23:45.000Z</updated>
         <content type="html"><![CDATA[<p>docker 的安装部署上一篇已经讲了<br>
@@ -225,8 +293,8 @@ https://github.com/getredash/redash/archive/v7.0.0.tar.gz<br>
     </entry>
     <entry>
         <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（二）：docker安装部署]]></title>
-        <id>https://www.elazer.tk/krmzbROCj/</id>
-        <link href="https://www.elazer.tk/krmzbROCj/">
+        <id>https://www.rockythink.tk/krmzbROCj/</id>
+        <link href="https://www.rockythink.tk/krmzbROCj/">
         </link>
         <updated>2019-07-12T07:57:43.000Z</updated>
         <content type="html"><![CDATA[<p>我这边是用官方提供的docker方式部署的，也有直接部署在系统环境中的，这里推荐一篇文章：<a href="http://guzhenping.com/2018/11/02/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0--Redash/">Redash开发指南</a>，他有个微信群，大家可以在文章里加下，如果有对二次开发有需求的同学；</p>
@@ -241,7 +309,7 @@ Mac版本和Windows版本已经集成了docker-compose，linux好像没有；</p
 <p>这是地址<a href="https://cr.console.aliyun.com/#/accelerator">阿里云容器镜像服务</a>，打开登录后,左下角有个镜</p>
 <p>像加速器，就能看到自己的加速链接了，一人一码，不要钱</p>
 <p>不仅如此，页面中把加速器的配置方法都写上了，我在这里就不阐述了<br>
-<img src="https://www.elazer.tk/post-images/1562921491978.png" alt="" loading="lazy"></p>
+<img src="https://www.rockythink.tk/post-images/1562921491978.png" alt="" loading="lazy"></p>
 <p>步骤二：<br>
 1、建立好配置文件夹：</p>
 <pre><code>sudo mkdir /opt/redash
@@ -406,8 +474,8 @@ sudo docker-compose up -d
     </entry>
     <entry>
         <title type="html"><![CDATA[【BI工具】Redash的部署和使用系列（一）：简单介绍]]></title>
-        <id>https://www.elazer.tk/hello-gridea/</id>
-        <link href="https://www.elazer.tk/hello-gridea/">
+        <id>https://www.rockythink.tk/hello-gridea/</id>
+        <link href="https://www.rockythink.tk/hello-gridea/">
         </link>
         <updated>2019-07-11T16:00:00.000Z</updated>
         <content type="html"><![CDATA[<p>本系列文章参考了一些网上的文章和官方文档：<br>
