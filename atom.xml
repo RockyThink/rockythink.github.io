@@ -1,86 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://rt.github.io</id>
+    <id>https://rockythink.github.io</id>
     <title>RockyThink</title>
-    <updated>2021-12-02T11:27:09.070Z</updated>
+    <updated>2021-12-12T16:59:52.779Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://rt.github.io"/>
-    <link rel="self" href="https://rt.github.io/atom.xml"/>
-    <subtitle>平凡的从容</subtitle>
-    <logo>https://rt.github.io/images/avatar.png</logo>
-    <icon>https://rt.github.io/favicon.ico</icon>
+    <link rel="alternate" href="https://rockythink.github.io"/>
+    <link rel="self" href="https://rockythink.github.io/atom.xml"/>
+    <subtitle>一件小事，守着我的平凡和从容</subtitle>
+    <logo>https://rockythink.github.io/images/avatar.png</logo>
+    <icon>https://rockythink.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, RockyThink</rights>
     <entry>
         <title type="html"><![CDATA[堡垒机ssh通道常驻【现网连数据库】 堡垒机ssh通道常驻【现网连数据库】 ]]></title>
-        <id>https://rt.github.io/post/hello-gridea/</id>
-        <link href="https://rt.github.io/post/hello-gridea/">
+        <id>https://rockythink.github.io/post/hello-gridea/</id>
+        <link href="https://rockythink.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="场景">场景</h2>
-<p>为了数据安全，大多数据库不对外网开放，本地机器如果需要连接数据库，基本都是通过ssh通道的方式来连接。<br>
-基本原理是这样的：<br>
-你工作的电脑（客户端），是在一个外网环境下我们计作【A】好了；<br>
-数据库【比方说是mysql】所在的服务器在一个内网环境下（或者只有内网才能连接），我们计作【B】；<br>
-堡垒机和数据库在同一个内网，但可以通过外网访问，计作【C】；</p>
-<p>我们通过Navicat或是datagrip等客户端访问数据库的时候<br>
-过程是这样的：<br>
-1、A会先通过ssh来连接C（一般是22端口）；<br>
-2、A告诉C，让C来访问B，并把B的3306端口映射到A的某一个端口（默认随机也可以指定）上；<br>
-3、然后，客户端A就可以通过访问<code>A自己的这个端口</code>间接访问B了;</p>
-<p>但是，<strong>并不是所以的数据库客户端都可以来配置ssh的</strong>，比方说，我们要在A上部署个数据调度系统；</p>
-<p>所以，我们要用一个服务来帮助我们把前两步的事情做了，然后我们只要做后一步就好了；</p>
-<h2 id="很简单">很简单</h2>
-<pre><code class="language-shell">/usr/bin/ssh -N -L 0.0.0.0:[A的端口]:[B的ip]:[B的数据库端口] [C的用户名]@[C的外网ip] -i /root/.ssh/id_rsa
-</code></pre>
-<p>举个🌰</p>
-<pre><code class="language-shell">/usr/bin/ssh -N -L 0.0.0.0:3306:10.10.10.243:3306 user1@10.30.0.136 -i /root/.ssh/id_rsa
-</code></pre>
-<p>这样，直接连接A机器的IP和3306端口就可以了</p>
-<p>但是这样会断掉</p>
-<p>我们把它包装成一个后台服务吧</p>
-<pre><code class="language-shell">cd /usr/lib/systemd/system
-vim db_ssh.service
-</code></pre>
-<p>编辑</p>
-<pre><code>
-Description=db_ssh
-
-Requires=network.target
-
-After=network.target
-
-[Service]
-
-Type=simple
-
-#开始命令
-ExecStart= /usr/bin/ssh -N -L 0.0.0.0:3306:10.10.10.243:3306 user1@10.30.0.136 -i /root/.ssh/id_rsa
-#重启等待时间
-# RestartSec=1s
-#重启时机
-Restart=on-failure
-KillMode=process
-
-User=root
-
-Group=root
-
-[Install]
-
-WantedBy=multi-user.target
-</code></pre>
-<p>然后：</p>
-<pre><code class="language-shell">systemctl daemon-reload
-
-systemctl start db_ssh.service
-</code></pre>
-<p>查看服务状态</p>
-<pre><code class="language-shell">systemctl start db_ssh.service
-</code></pre>
-<pre><code>ps aux | grep ssh
-</code></pre>
-<p>看看进程里有没有你想看到的就好啦</p>
-<p>祝好！</p>
-]]></content>
     </entry>
 </feed>
