@@ -2096,7 +2096,7 @@ body {
       border-bottom-color: #555;
     }
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
-      background: #eeeeeefe;
+      background: #212529fe;
     }h1, h2, h3, h4, h5, h6 {
       color: #555;
     }
@@ -2136,7 +2136,7 @@ body {
       border-bottom-color: #222;
     }
       .nav-item a {
-        color:  #555;
+        color:  #212529;
       }.nav-item a:hover {
         color: #222;
       }.nav-item-active {
@@ -2163,29 +2163,29 @@ body {
       }.pisces .sidebar, .gemini .sidebar {
         right: 0;
       }.markdownIt-TOC a {
-      color: #eee;
-      border-bottom-color: #eee;
+      color: #343a40;
+      border-bottom-color: #343a40;
     }.markdownIt-TOC a:hover {
-      color: #fff;
-      border-bottom-color: #fff;
+      color: #e67700;
+      border-bottom-color: #e67700;
     }.active-current > a {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #d9480f !important;
+      border-bottom-color: #d9480f !important;
     }
     .sidebar-title-active {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #d9480f;
+      border-bottom-color: #d9480f;
     }
     .sidebar-title-item:hover {
-      color: #fc6423 !important;
+      color: #d9480f !important;
     }
     .active-show > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #d9480f;
+      border-bottom-color: #d9480f;
     }
     .active-hidden > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #d9480f;
+      border-bottom-color: #d9480f;
     }.bg-color {
       background-color: #fffffffe;
     }
