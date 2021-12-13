@@ -8,7 +8,7 @@
 <meta name="keywords" content="python,数据分析">
 <meta name="description" content="一件小事，守着我的平凡和从容">
 <meta name="theme-color" content="#000">
-<title>RockyThink</title>
+<title>【Redash官方文档】用户指南-创建和编辑查询 | RockyThink</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1639372238644">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -39,6 +39,8 @@
 </script>
 
 
+  <meta name="description" content="【Redash官方文档】用户指南-创建和编辑查询" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -166,8 +168,24 @@
     <div
       class="section-layout gemini ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -211,51 +229,413 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E6%9F%A5%E8%AF%A2%E7%BC%96%E8%BE%91%E5%99%A8">查询编辑器</a>
+<ul>
+<li><a href="#%E6%9F%A5%E8%AF%A2%E8%AF%AD%E6%B3%95">查询语法</a></li>
+<li><a href="#%E9%94%AE%E7%9B%98%E5%BF%AB%E6%8D%B7%E9%94%AE">键盘快捷键</a></li>
+<li><a href="#%E6%9E%B6%E6%9E%84%E6%B5%8F%E8%A7%88%E5%99%A8">架构浏览器</a></li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8">自动补全</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9F%A5%E8%AF%A2%E8%AE%BE%E7%BD%AE">查询设置</a>
+<ul>
+<li><a href="#%E5%B7%B2%E5%8F%91%E5%B8%83%E4%B8%8E%E6%9C%AA%E5%8F%91%E5%B8%83%E7%9A%84%E6%9F%A5%E8%AF%A2">已发布与未发布的查询</a></li>
+<li><a href="#%E5%BD%92%E6%A1%A3%E6%9F%A5%E8%AF%A2">归档查询</a></li>
+<li><a href="#%E5%A4%8D%E5%88%B6%E5%88%86%E6%94%AF%E6%9F%A5%E8%AF%A2">复制（分支）查询</a></li>
+<li><a href="#%E7%AE%A1%E7%90%86%E6%9F%A5%E8%AF%A2%E6%9D%83%E9%99%90">管理查询权限</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
 </div>
+
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
       }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
     });
   }
-  </script>
-        <div class="section-box gemini box-shadow-wrapper">
-          <section class="friends-section bg-color slide-down-in">
-            <div class="firends-box">
-              <h1 class="firends-title" itemprop="name headline">友情链接</h1>
-              
-              
-              
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
             </div>
-            <hr>
-            <div style="text-align:center">
-              <span class="with-love">
-                <i class="fa fa-heart"></i>
-              </span>
-              留言添加友链
-              <span class="with-love">
-                <i class="fa fa-heart"></i>
-              </span>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://rockythink.github.io/p7kuCt1tC/">
+      【Redash官方文档】用户指南-创建和编辑查询
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2021-12-13</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>4分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>919<span class="pc-show">字数</span></span>
+    </span>
+    
+    
+    
+    <span id="/p7kuCt1tC/" data-flag-title="【Redash官方文档】用户指南-创建和编辑查询" class="meta-item pc-show leancloud_visitors">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-eye"></i>
+      <span>浏览量：<span class="leancloud-visitors-count"></span></span>
+    </span>
+    
+  </div>
+</header>
+            <div class="post-body next-md-body" id="post_body">
+              <p>要进行新的查询，请点击导航栏中的【创建】-【查询】<br>
+<img src="https://rockythink.github.io/post-images/1639371353138.png" alt="" loading="lazy"></p>
+<h1 id="查询编辑器">查询编辑器</h1>
+<h2 id="查询语法">查询语法</h2>
+<p>在大多数情况下，我们使用数据源的原生查询语言。</p>
+<!-- more -->
+<h2 id="键盘快捷键">键盘快捷键</h2>
+<ul>
+<li>执行查询：Ctrl/Cmd + Enter</li>
+<li>保存查询：Ctrl/Cmd + S</li>
+<li>激活自动补全：Ctrl + Space</li>
+<li>激活架构浏览器：ALt/Option + D</li>
+</ul>
+<h2 id="架构浏览器">架构浏览器</h2>
+<p>在查询编辑器的左侧，您可以找到架构浏览器：</p>
+<figure data-type="image" tabindex="1"><img src="https://rockythink.github.io/post-images/1639371396690.png" alt="" loading="lazy"></figure>
+<p>架构浏览器将列出您的所有表，单击表示将显示列。要将需要的字段或表插入到查询语句中，只需要单击有侧的双箭头即可。您可以使用搜索框来过滤架构，也可以用过单击刷新按钮来刷新架构（它也会在后台定期刷新）。</p>
+<blockquote>
+<p>注意：并非所有的数据源类型都支持加载架构。</p>
+</blockquote>
+<p>您可以使用快捷键或双击页面上的手柄来隐藏架构浏览器。当你需要在编写查询时获得最大化的屏幕空间时，这会很有用。</p>
+<h2 id="自动补全">自动补全</h2>
+<p>查询编辑器还包括一个自动补全的功能，可以更轻松的编写复杂的查询语句。默认情况下，实时自动补全处于开启的状态。因此，您将在输入时看到表和字段的建议。<br>
+您可以通过单击查询编辑器下方的闪电按钮来禁用实时自动补全。当实时自动补全禁用时，您仍然可以通过<code>Ctrl + Space</code>来激活。</p>
+<blockquote>
+<p>除非您的数据库架构有超过5000个标记（表或列），否则默认情况下自动补全功能都是自动开启的。</p>
+</blockquote>
+<p>自动补全查询语句中的表、或者标识符（如 Select 或 Join）和查询片段的标题。</p>
+<h1 id="查询设置">查询设置</h1>
+<h2 id="已发布与未发布的查询">已发布与未发布的查询</h2>
+<p>默认情况下，每个查询都以<code>New Query</code>的未发布草稿开始。它不能包含在仪表板中或与警报一起使用。<br>
+要发布查询，需要更改名称或单击 <code>Publish</code>按钮。您可以通过单击<code>Unpublish</code>按钮来切换发布状态。取消发布不会将其从仪表板或警报中删除。但会阻止您将其放到其他任何地方。</p>
+<blockquote>
+<p>发布或取消发布查询不会影响其可见性，所有登录用户都可以看到您组织中的所有查询。</p>
+</blockquote>
+<h2 id="归档查询">归档查询</h2>
+<p>您不能在Redash中删除查询，但你可以存档他们。归档就像是删除，但直接连接到的查询仍然有效。要存档查询，请打开查询编辑器右上角的省略号菜单，然后单击存档按钮。<br>
+<img src="https://rockythink.github.io/post-images/1639371407457.png" alt="" loading="lazy"></p>
+<h2 id="复制分支查询">复制（分支）查询</h2>
+<p>如果您需要创建现有查询的副本（由您或其他人创建），你可以选择分支它。要分支查询，只需要单击“Fork”按钮（在省略号菜单中）。<br>
+<img src="https://rockythink.github.io/post-images/1639371414411.png" alt="" loading="lazy"></p>
+<h2 id="管理查询权限">管理查询权限</h2>
+<p>默认情况下，保存的查询只有创建它的用户和Admin组成员才能修改。但Redash包含实验性支持，可以与非管理员用户共享编辑权限。您组织中的管理员需要先启用他。打开您的组织设置并选中“启用是实验性多所有者支持”<br>
+<img src="https://rockythink.github.io/post-images/1639371428898.png" alt="" loading="lazy"><br>
+现在查询编辑器选项菜单包括一个<code>manage Permission</code> 选项，单击它会打开一个对话框，您可以在其中将其他用户作为编辑身份添加到查询或仪表板。<br>
+<img src="https://rockythink.github.io/post-images/1639371436536.png" alt="" loading="lazy"></p>
+<blockquote>
+<p>请注意，目前您添加的用户不会收到通知，您需要手动通知他们。/</p>
+</blockquote>
+
             </div>
-            <hr>
-            <div class="friends-note">
-              <p><strong>友链格式：</strong></p>
-              <ul>
-                <li>网站名称：枫糖</li>
-                <li>网站地址：<a href="https://blog.maplesugar.space" data-pjax-state="">https://blog.maplesugar.space</a>
-                </li>
-                <li> 网站描述：From rookie to master</li>
-                <li> 网站 Logo / 头像：<a href="https://blog.maplesugar.space/uploads/maple-leaf-avatar.jpg"
-                    data-pjax-state="">https://blog.maplesugar.space/uploads/maple-leaf-avatar.jpg</a></li>
-              </ul>
-            </div>
+            <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      RockyThink
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://rockythink.github.io/p7kuCt1tC/" title="【Redash官方文档】用户指南-创建和编辑查询">https://rockythink.github.io/p7kuCt1tC/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="【Redash官方文档】用户指南-查询-查询现有查询结果" href="https://rockythink.github.io/Hld6zjWGx/">【Redash官方文档】用户指南-查询-查询现有查询结果</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="【Redash官方文档】用户指南-查询-查询现有查询结果" href="https://rockythink.github.io/Hld6zjWGx/">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="【Redash官方文档】用户指南-入门" href="https://rockythink.github.io/nMWm7rUjm/">【Redash官方文档】用户指南-入门</a>
+        <a class="nav-mobile-next" title="【Redash官方文档】用户指南-入门" href="https://rockythink.github.io/nMWm7rUjm/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
             
   <script src="https://cdn.jsdelivr.net/npm/valine@1.4.4/dist/Valine.min.js"></script>
 <div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
@@ -305,7 +685,7 @@
   });
 </script>
 
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -479,6 +859,36 @@
   // 代码高亮
   hljs.initHighlightingOnLoad();
 
+</script>
+    <div class="light-box" id="light_box"></div>
+<script>
+  let imgs = document.querySelectorAll('.post-body img');
+  let lightBox = document.querySelector('#light_box');
+  lightBox.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
+  lightBox.addEventListener('mousewheel', (e) => {
+    e.preventDefault()
+  })
+  let width = window.innerWidth * 0.8;
+  lightBox.onclick = () => {
+    let img = lightBox.querySelector('img');
+    lightBox.style = '';
+    img && img.remove();
+  }
+  imgs.forEach(item => {
+    item.onclick = function (e) {
+      let lightImg = document.createElement('img');
+      lightImg.src = this.src;
+      lightBox.style = `height: 100%; opacity: 1; background-color: rgba(0, 0, 0, 0.5);cursor: zoom-out;`;
+      lightImg.style = `width: ${width}px; border: 1px solid #fff; border-radius: 2px;`;
+      lightImg.onclick = function () {
+        lightBox.style = '';
+        this.remove();
+      }
+      lightBox.append(lightImg);
+    }
+  })
 </script>
   </div>
 </body>
@@ -956,6 +1366,5 @@ systemctl start db_ssh.service
 
 
 <script src=" /media/js/cool.js"></script>
-
 
 </html>

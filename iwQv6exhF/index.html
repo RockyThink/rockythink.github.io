@@ -8,7 +8,7 @@
 <meta name="keywords" content="python,数据分析">
 <meta name="description" content="一件小事，守着我的平凡和从容">
 <meta name="theme-color" content="#000">
-<title>RockyThink</title>
+<title>【Redash官方文档】用户指南-查询-查询参数 | RockyThink</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1639372238644">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -39,6 +39,8 @@
 </script>
 
 
+  <meta name="description" content="【Redash官方文档】用户指南-查询-查询参数" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -166,8 +168,24 @@
     <div
       class="section-layout gemini ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -211,51 +229,507 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BB%8Eui%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%8F%82%E6%95%B0">从UI中添加参数</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE">参数设置</a>
+<ul>
+<li><a href="#%E5%BF%AB%E9%80%9F%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%A5%E6%9C%9F%E8%8C%83%E5%9B%B4%E9%80%89%E9%A1%B9">快速日期和日期范围选项</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8">下拉列表</a>
+<ul>
+<li><a href="#%E5%9F%BA%E4%BA%8E%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8">基于查询的下拉列表</a></li>
+<li><a href="#%E5%A4%9A%E9%80%89%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8">多选下拉列表</a></li>
+</ul>
+</li>
+<li><a href="#faq">FAQ</a><br>
+*
+<ul>
+<li><a href="#%E5%8F%AF%E4%BB%A5%E5%9C%A8%E5%8D%95%E4%B8%AA%E6%9F%A5%E8%AF%A2%E4%B8%AD%E5%A4%8D%E7%94%A8%E7%9B%B8%E5%90%8C%E7%9A%84%E5%8F%82%E6%95%B0%E5%90%97">可以在单个查询中复用相同的参数吗?</a></li>
+<li><a href="#%E6%88%91%E5%8F%AF%E4%BB%A5%E5%9C%A8%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%AF%A2%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0%E5%90%97">我可以在一个查询中使用多个参数吗？</a></li>
+<li><a href="#%E6%88%91%E5%8F%AF%E4%BB%A5%E5%9C%A8%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E4%BB%AA%E8%A1%A8%E6%9D%BF%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8F%82%E6%95%B0%E5%90%97">我可以在可视化和仪表板中使用参数吗？</a></li>
+<li><a href="#%E6%88%91%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E4%BF%AE%E6%94%B9url%E6%9D%A5%E6%9B%B4%E6%94%B9%E5%8F%82%E6%95%B0%E7%9A%84%E5%80%BC%E5%90%97">我可以通过修改URL来更改参数的值吗？</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BB%AA%E8%A1%A8%E6%9D%BF%E4%B8%8A%E7%9A%84%E5%8F%82%E6%95%B0%E6%98%A0%E5%B0%84">仪表板上的参数映射</a></li>
+<li><a href="#%E5%80%BC%E6%BA%90%E8%AE%BE%E7%BD%AE">值源设置</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
 </div>
+
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
       }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
     });
   }
-  </script>
-        <div class="section-box gemini box-shadow-wrapper">
-          <section class="friends-section bg-color slide-down-in">
-            <div class="firends-box">
-              <h1 class="firends-title" itemprop="name headline">友情链接</h1>
-              
-              
-              
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
             </div>
-            <hr>
-            <div style="text-align:center">
-              <span class="with-love">
-                <i class="fa fa-heart"></i>
-              </span>
-              留言添加友链
-              <span class="with-love">
-                <i class="fa fa-heart"></i>
-              </span>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://rockythink.github.io/iwQv6exhF/">
+      【Redash官方文档】用户指南-查询-查询参数
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2021-12-13</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>8分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>2231<span class="pc-show">字数</span></span>
+    </span>
+    
+    
+    
+    <span id="/iwQv6exhF/" data-flag-title="【Redash官方文档】用户指南-查询-查询参数" class="meta-item pc-show leancloud_visitors">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-eye"></i>
+      <span>浏览量：<span class="leancloud-visitors-count"></span></span>
+    </span>
+    
+  </div>
+</header>
+            <div class="post-body next-md-body" id="post_body">
+              <p>使用查询参数，您可以在运行时将值替换到你的查询语句中，而无需再次编辑查询语句。<br>
+Redash使用双花括号来定义需要替换的参数<code>{{ }}</code>,只要在字符串中出现被双花括号包裹的，都将被视为参数。并会在查询窗格上方出现一个小部件，以便于您更改参数值。</p>
+<!-- more -->
+<p><img src="https://redash.io/assets/images/docs/gitbook/parameter-example.png" alt="" loading="lazy"><br>
+在编辑模式下，您可以单击每个参数小部件的齿轮图标来调整其设置。当你单击&quot;Show Data Only&quot;时，齿轮图标会消失，以便不拥有查询权限的用户无法更改参数。<br>
+<img src="https://redash.io/assets/images/docs/gitbook/query-parameter-widgets.png" alt="" loading="lazy"></p>
+<h2 id="从ui中添加参数">从UI中添加参数</h2>
+<p>您可以通过鼠标点击页面上的按钮<code>Add Parameter</code>或关联键盘的快捷键来插入参数。</p>
+<blockquote>
+<p>您可以通过光标悬停在<code>Add Parameter</code>按钮上，来发现自己操作系统的快捷键。</p>
+</blockquote>
+<h2 id="参数设置">参数设置</h2>
+<p>单击每个参数小部件旁边的齿轮按钮，可以编辑设置：<br>
+·<strong>Title</strong>：默认情况下，参数的Title属性与查询文本中被花括号括起来的字符串相同，如果你需要将它改成一个更加友好的名字，您可以设置它；<br>
+·<strong>Type</strong>：每个参数都以文本类型为默认。这里你可以修改他的类型，支持的类型有：文本、数字、日期、日期和时间、日期和时间（带秒）和下拉列表；<br>
+<img src="https://redash.io/assets/images/docs/gitbook/parameter-modal-v9.png" alt="" loading="lazy"></p>
+<blockquote>
+<p>Redash在版本7之前，查询编辑器的参数设置还有一个叫“Global”的复选框，他是为了可以在仪表板中可以复用多个查询的参数，从第六版开始，这个功能的实现方式被替换为仪表板上的参数映射功能。</p>
+</blockquote>
+<blockquote>
+<p>出于安全原因，Redash用户必须具有对数据源的完全访问权限才可以使用文本类型的参数。所有用户都可以使用除文本类型外的其他类型参数。</p>
+</blockquote>
+<p>##日期和日期范围参数<br>
+日期参数使用我们熟悉的日历选择界面，可以默认为当前日期和时间。您可以从三个精度来进行选择：日期、日期和时间以及日期和时间（带秒）。<br>
+日期范围参数需要插入两个参数，分别用<code>.start</code>和<code>.end</code>来标记，用来表示日期范围的开始和结束。</p>
+<pre><code class="language-sql">SELECT a, b c
+FROM table1
+WHERE
+  relevant_date &gt;= '{{ myDate.start }}'
+  AND table1.relevant_date &lt;= '{{ myDate.end }}'
+</code></pre>
+<blockquote>
+<p>日期参数作为字符串替换到查询语句中，因此，您应该用单引号（<code>'</code>）或者您通过数据库用于声明字符串的语句括起来，<br>
+虽然他是以文本形式传递的到数据库中的，但是他在共享的仪表板中仍然是安全的。</p>
+</blockquote>
+<p>日期范围参数使用组合小部件来简化选择：<br>
+<img src="https://redash.io/assets/images/docs/gitbook/date-range-picker.png" alt="" loading="lazy"></p>
+<h3 id="快速日期和日期范围选项">快速日期和日期范围选项</h3>
+<p>当你向查询中添加日期或日期范围参数时，选择小部件会提示一个蓝色的闪电图标。单击它可以查看动态值，例如“上个月”、“昨天”或者“去年”。这些都是动态更新的。</p>
+<blockquote>
+<p>由于动态的日期和日期范围是在前端计算的，因此它们与计划查询不兼容。</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://img-blog.csdnimg.cn/img_convert/c2fcce1ceb8b5abb9579b2341affa8e9.png" alt="img" loading="lazy"></figure>
+<h2 id="下拉列表">下拉列表</h2>
+<p>如果要在运行查询时限制参数值的范围，可以使用Redash的下拉列表（Dropdown List）参数类型。<br>
+从参数设置面板中选择时，会出现一个文本框，您可以在其中输入允许的值，每个值用换行来分割。下拉列表的本质还是文本格式，所以当你的参数是日期的时候，您可以以数据库的要求格式添加到列表中。</p>
+<h3 id="基于查询的下拉列表">基于查询的下拉列表</h3>
+<p>下拉列表也可以与现有的查询结果相关联。只需单击设置面板中的类型，选择“<code>Query Based Dropdown List</code>“，在已经存在的查询中选择你需要加载的查询。<br>
+如果目标的查询返回大量的值，那么性能可能会下降。</p>
+<p><strong>如果您的目标返回多列，Redash会使用第一列，如果您的目标查询返回<code>name</code>和<code>value</code>时，Redash使用name作为前端显示的值，而value作为实际传递给数据库的值。【译者觉得非常有用，记个重点】</strong></p>
+<p>例如：这个查询：</p>
+<pre><code class="language-sql">
+SELECT user_uuid as `value`, username as `name`
+FROM users
+</code></pre>
+<p>返回的结果是</p>
+<table>
+<thead>
+<tr>
+<th>value</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1001</td>
+<td>John Smith</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Jane Doe</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Bobby Tables</td>
+</tr>
+</tbody>
+</table>
+<p>那么下拉列表的显示的将是：<br>
+<img src="https://redash.io/assets/images/docs/gitbook/dropdown-list-name-value.png" alt="" loading="lazy"></p>
+<p>但是替换的查询语句将是 1001、1002或1003。</p>
+<h3 id="多选下拉列表">多选下拉列表</h3>
+<p>下拉列表也可以是允许多选，只需勾选”允许多个值“的选项即可，你也可以选择是否将其用单引号或者双引号包裹。</p>
+<figure data-type="image" tabindex="2"><img src="https://redash.io/assets/images/docs/gitbook/multi-select-dropdown.png" alt="" loading="lazy"></figure>
+<p>在您的查询中，可以这样使用：</p>
+<pre><code class="language-sql">SELECT ...
+FROM   ...
+WHERE field IN ( {{ Multi Select Parameter }} )
+</code></pre>
+<p>多选下拉列表可以使用重复的值<br>
+<img src="https://redash.io/assets/images/docs/gitbook/multi-select.png" alt="" loading="lazy"></p>
+<h2 id="faq">FAQ</h2>
+<h4 id="可以在单个查询中复用相同的参数吗">可以在单个查询中复用相同的参数吗?</h4>
+<p>当然可以！只需要在大括号中使用相同的标识符即可，例如：</p>
+<pre><code class="language-sql">SELECT {{org_id}}, count(0)
+FROM queries
+WHERE org_id = {{org_id}}
+</code></pre>
+<p>我们使用了{{org_id}} 两次。</p>
+<h4 id="我可以在一个查询中使用多个参数吗">我可以在一个查询中使用多个参数吗？</h4>
+<p>当然可以<br>
+只需要为每个参数使用唯一的标识符即可，例如：</p>
+<pre><code class="language-sql">SELECT count(0)
+FROM queries
+WHERE org_id = {{org_id}} AND created_at &gt; '{{start_date}}'
+</code></pre>
+<p>这里使用了两个参数”org_id“ 和”start_date“。</p>
+<h4 id="我可以在可视化和仪表板中使用参数吗">我可以在可视化和仪表板中使用参数吗？</h4>
+<p>可以，但一个例外情况：<br>
+如果查询使用的参数为文本类型：则无法在仪表板中使用他（因为这将会有SQL注入的风险）。所有其他类型的参数都可以在可视化和仪表板中安全使用。</p>
+<blockquote>
+<p>在Redash v8版本之前，嵌入式可视化不允许使用参数。在未来的版本中，所有参数类型都将被允许用于公开分享的仪表板和可视化。</p>
+</blockquote>
+<h4 id="我可以通过修改url来更改参数的值吗">我可以通过修改URL来更改参数的值吗？</h4>
+<p>可以。每个参数都以<code>p_</code>开头的形式出现在URL中，例如：</p>
+<pre><code class="language-sql">SELECT * FROM table WHERE field = {{param}}
+</code></pre>
+<p>那么就会有这样的链接：<br>
+<code>https://xxxx.com/&lt;slug&gt;/queries/1234?p_param=100</code><br>
+这个对查询和仪表板之间的关联很有用。</p>
+<h2 id="仪表板上的参数映射">仪表板上的参数映射</h2>
+<p>查询参数也可以在仪表板内进行控制。您可以将不同的小部件的参数链接在一起、设置静态参数，或为每个小部件单独选择值。</p>
+<p>在添加依赖于参数值的小部件时，您可以选择所需的参数映射。基础查询中的每个参数都会出现在参数列表中。<br>
+<img src="https://redash.io/assets/images/docs/gitbook/dashboard_parameter_mapping.png" alt="" loading="lazy"></p>
+<blockquote>
+<p>您还可以点击仪表板小部件上的垂直省略号按钮，来访问参数映射界面。</p>
+</blockquote>
+<p>· <strong>标题</strong>（Title）是参数的显示名称，将出现在仪表板上的值选择器旁边，提示用户这个参数的含义。默认为参数关键字。通过单击铅笔按钮进行编辑。注意，如果是静态仪表板，不显示参数，因为选择器会被隐藏。如果您选择的是<code>Static value</code>作为仪表板的参数类型，则标题会变灰。<br>
+·<strong>关键字</strong>（Keyword）是基础查询中的参数字符串。如果您的仪表板未返回预期结果，这对调试很有用。<br>
+·<strong>默认值</strong>（Default Value）如果未指定其他值，则默认值Redash将使用的值。要从查询编辑器更改此设置，使用所需的参数值进行查询，然后单击“<strong>保存</strong>”按钮。<br>
+·<strong>值源</strong>（Value Source）是您选择首选映射的地方。单击铅笔按钮以打开映射器设置。</p>
+<h2 id="值源设置">值源设置</h2>
+<p>·<strong>新建仪表板参数</strong>：仪表板参数允许您在仪表板的一个位置设置参数值并将其映射到多个可视化。使用此选项可创建新的仪表板级参数。<br>
+·<strong>现有仪表板参数</strong>：如果您已经设置了仪表板级参数。请使用此选项将其映射到特定查询参数。您需要指定将映射哪个预先存在的仪表板参数。<br>
+·<strong>小部件参数</strong>：此选项将在仪表板小部件内显示一个值选择器。这对于不在小部件之间共享的一次性参数很有用。<br>
+·<strong>静态值</strong>：选择此选项将使您为此小部件选择静态值，而不管其他小部件上使用的值如何。静态映射的参数值不会在更紧凑的仪表板上的任何位置显示值选择器。这使您可以利用查询参数的灵活性，而不会在预计某些参数不会频繁更改时使仪表板上的用户界面变得混乱。</p>
+
             </div>
-            <hr>
-            <div class="friends-note">
-              <p><strong>友链格式：</strong></p>
-              <ul>
-                <li>网站名称：枫糖</li>
-                <li>网站地址：<a href="https://blog.maplesugar.space" data-pjax-state="">https://blog.maplesugar.space</a>
-                </li>
-                <li> 网站描述：From rookie to master</li>
-                <li> 网站 Logo / 头像：<a href="https://blog.maplesugar.space/uploads/maple-leaf-avatar.jpg"
-                    data-pjax-state="">https://blog.maplesugar.space/uploads/maple-leaf-avatar.jpg</a></li>
-              </ul>
-            </div>
+            <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      RockyThink
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://rockythink.github.io/iwQv6exhF/" title="【Redash官方文档】用户指南-查询-查询参数">https://rockythink.github.io/iwQv6exhF/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="【Redash官方文档】用户指南-查询-查询现有查询结果" href="https://rockythink.github.io/Hld6zjWGx/">【Redash官方文档】用户指南-查询-查询现有查询结果</a>
+        <a class="nav-mobile-next" title="【Redash官方文档】用户指南-查询-查询现有查询结果" href="https://rockythink.github.io/Hld6zjWGx/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
             
   <script src="https://cdn.jsdelivr.net/npm/valine@1.4.4/dist/Valine.min.js"></script>
 <div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
@@ -305,7 +779,7 @@
   });
 </script>
 
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -479,6 +953,36 @@
   // 代码高亮
   hljs.initHighlightingOnLoad();
 
+</script>
+    <div class="light-box" id="light_box"></div>
+<script>
+  let imgs = document.querySelectorAll('.post-body img');
+  let lightBox = document.querySelector('#light_box');
+  lightBox.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
+  lightBox.addEventListener('mousewheel', (e) => {
+    e.preventDefault()
+  })
+  let width = window.innerWidth * 0.8;
+  lightBox.onclick = () => {
+    let img = lightBox.querySelector('img');
+    lightBox.style = '';
+    img && img.remove();
+  }
+  imgs.forEach(item => {
+    item.onclick = function (e) {
+      let lightImg = document.createElement('img');
+      lightImg.src = this.src;
+      lightBox.style = `height: 100%; opacity: 1; background-color: rgba(0, 0, 0, 0.5);cursor: zoom-out;`;
+      lightImg.style = `width: ${width}px; border: 1px solid #fff; border-radius: 2px;`;
+      lightImg.onclick = function () {
+        lightBox.style = '';
+        this.remove();
+      }
+      lightBox.append(lightImg);
+    }
+  })
 </script>
   </div>
 </body>
@@ -956,6 +1460,5 @@ systemctl start db_ssh.service
 
 
 <script src=" /media/js/cool.js"></script>
-
 
 </html>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rockythink.github.io</id>
     <title>RockyThink</title>
-    <updated>2021-12-12T17:58:54.911Z</updated>
+    <updated>2021-12-13T05:10:53.949Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rockythink.github.io"/>
     <link rel="self" href="https://rockythink.github.io/atom.xml"/>
@@ -11,6 +11,64 @@
     <icon>https://rockythink.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, RockyThink</rights>
     <entry>
+        <title type="html"><![CDATA[【Redash官方文档】用户指南-查询-查询参数]]></title>
+        <id>https://rockythink.github.io/iwQv6exhF/</id>
+        <link href="https://rockythink.github.io/iwQv6exhF/">
+        </link>
+        <updated>2021-12-13T05:07:51.000Z</updated>
+        <summary type="html"><![CDATA[<p>使用查询参数，您可以在运行时将值替换到你的查询语句中，而无需再次编辑查询语句。<br>
+Redash使用双花括号来定义需要替换的参数<code>{{ }}</code>,只要在字符串中出现被双花括号包裹的，都将被视为参数。并会在查询窗格上方出现一个小部件，以便于您更改参数值。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>使用查询参数，您可以在运行时将值替换到你的查询语句中，而无需再次编辑查询语句。<br>
+Redash使用双花括号来定义需要替换的参数<code>{{ }}</code>,只要在字符串中出现被双花括号包裹的，都将被视为参数。并会在查询窗格上方出现一个小部件，以便于您更改参数值。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Redash官方文档】用户指南-查询-查询现有查询结果]]></title>
+        <id>https://rockythink.github.io/Hld6zjWGx/</id>
+        <link href="https://rockythink.github.io/Hld6zjWGx/">
+        </link>
+        <updated>2021-12-13T04:58:04.000Z</updated>
+        <summary type="html"><![CDATA[<p>该<strong>查询结果数据源（QRDS)</strong> 可以查询 从其他数据源的结果。使用它来连接来自多个数据库的数据。Redash 使用内存中的SQLite数据库来实现这一点。因此，如果Redash内存不足，对大型结果集的查询可能会失败。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>该<strong>查询结果数据源（QRDS)</strong> 可以查询 从其他数据源的结果。使用它来连接来自多个数据库的数据。Redash 使用内存中的SQLite数据库来实现这一点。因此，如果Redash内存不足，对大型结果集的查询可能会失败。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Redash官方文档】用户指南-创建和编辑查询]]></title>
+        <id>https://rockythink.github.io/p7kuCt1tC/</id>
+        <link href="https://rockythink.github.io/p7kuCt1tC/">
+        </link>
+        <updated>2021-12-13T04:53:19.000Z</updated>
+        <summary type="html"><![CDATA[<p>要进行新的查询，请点击导航栏中的【创建】-【查询】<br>
+<img src="https://rockythink.github.io/post-images/1639371353138.png" alt="" loading="lazy"></p>
+<h1 id="查询编辑器">查询编辑器</h1>
+<h2 id="查询语法">查询语法</h2>
+<p>在大多数情况下，我们使用数据源的原生查询语言。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>要进行新的查询，请点击导航栏中的【创建】-【查询】<br>
+<img src="https://rockythink.github.io/post-images/1639371353138.png" alt="" loading="lazy"></p>
+<h1 id="查询编辑器">查询编辑器</h1>
+<h2 id="查询语法">查询语法</h2>
+<p>在大多数情况下，我们使用数据源的原生查询语言。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Redash官方文档】用户指南-入门]]></title>
+        <id>https://rockythink.github.io/nMWm7rUjm/</id>
+        <link href="https://rockythink.github.io/nMWm7rUjm/">
+        </link>
+        <updated>2021-12-13T04:46:13.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="1-添加数据源">1、添加数据源</h2>
+<p>您需要做的第一件事情是连接数据源。您可以通过单击设置图标打开数据源管理页面：<br>
+<img src="https://rockythink.github.io/post-images/1639371025274.png" alt="" loading="lazy"></p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="1-添加数据源">1、添加数据源</h2>
+<p>您需要做的第一件事情是连接数据源。您可以通过单击设置图标打开数据源管理页面：<br>
+<img src="https://rockythink.github.io/post-images/1639371025274.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[堡垒机ssh通道常驻【现网连数据库】]]></title>
         <id>https://rockythink.github.io/bao-lei-ji-ssh-tong-dao-chang-zhu-xian-wang-lian-shu-ju-ku/</id>
         <link href="https://rockythink.github.io/bao-lei-ji-ssh-tong-dao-chang-zhu-xian-wang-lian-shu-ju-ku/">
@@ -18,17 +76,11 @@
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="场景">场景</h2>
 <p>为了数据安全，大多数据库不对外网开放，本地机器如果需要连接数据库，基本都是通过ssh通道的方式来连接。<br>
-基本原理是这样的：<br>
-你工作的电脑（客户端），是在一个外网环境下我们计作【A】好了；<br>
-数据库【比方说是mysql】所在的服务器在一个内网环境下（或者只有内网才能连接），我们计作【B】；<br>
-堡垒机和数据库在同一个内网，但可以通过外网访问，计作【C】；</p>
+基本原理是这样的：</p>
 ]]></summary>
         <content type="html"><![CDATA[<h2 id="场景">场景</h2>
 <p>为了数据安全，大多数据库不对外网开放，本地机器如果需要连接数据库，基本都是通过ssh通道的方式来连接。<br>
-基本原理是这样的：<br>
-你工作的电脑（客户端），是在一个外网环境下我们计作【A】好了；<br>
-数据库【比方说是mysql】所在的服务器在一个内网环境下（或者只有内网才能连接），我们计作【B】；<br>
-堡垒机和数据库在同一个内网，但可以通过外网访问，计作【C】；</p>
+基本原理是这样的：</p>
 ]]></content>
     </entry>
 </feed>
